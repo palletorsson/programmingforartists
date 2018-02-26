@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html>
+
+	<head>
+        <title> some title </title> 
+        <!-- show up as title meta, style and links to javas, -->
+        <script
+        src="jquery-3.3.1.min.js"
+        ></script>
+        <style>
+            .container {
+                text-align: center;
+                font-size: 50px;
+                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; 
+                height: 400px; 
+                top: 400px; 
+                position: relative
+            }
+            .button {
+                background-color: rgb(255, 0, 0); /* Green */
+                border: none;
+                color: white;
+                padding: 15px 32px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                text-transform: uppercase; 
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="button-container">
+                <button>hack</button>
+                <div id="banner-message" >
+                    all your base is belong to us
+                </div>
+            </div>
+        </div>
+        <script>
+            var hiddenBox = $( "#banner-message" );
+            hiddenBox.hide();
+            $( ".button-container button" ).on( "click", function( event ) {
+                hiddenBox.show();
+            });
+        </script>
+    </body>
+</html>
+
+

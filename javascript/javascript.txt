@@ -1,1 +1,5 @@
 javascript read me
+
+Ex 0: example of slide down using jquery on, click, hide and show as well as an anonymous function.
+Ex 1: example of an on-off button using jquery on, click, hide and show as well as an if-else statement.
+       
