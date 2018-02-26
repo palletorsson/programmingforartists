@@ -8,6 +8,6 @@ I kursen introduceras studenten till ämnet på tre olika sätt.
 
 2. Dels till programmering för visualisering och bildhantering såsom, JavaScript, Processing och spelutvecklingsverktyget Unity3d.
 
-3.Dels genom konkreta exempel på hur konstnärer arbetar med programmering.
+3. Dels genom konkreta exempel på hur konstnärer arbetar med programmering.
 
 Introduktionen till de olika områdena sker på måndagar. Under veckan följs arbetet upp med öppna laborationer och experiment som studenten driver själv genom samarbeten med andra studenter. I slutet av varje vecka sker en uppföljning med handledning av de enskilda projekten. Kursen avslutas med ett större konkret projekt som studenten utvecklar.
