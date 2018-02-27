@@ -1,0 +1,4 @@
+http://robseward.com/documentation/flw_light_study2/
+http://www.instructables.com/id/The-Most-Useless-Machine/?ALLSTEPS
+https://create.arduino.cc/projecthub/aip06/ai-lcd-friend-a0f140?ref=tag&ref_id=art&offset=19
+https://create.arduino.cc/projecthub/aerodynamics/arduino-led-matrix-game-of-life-093f06?ref=tag&ref_id=art&offset=3
