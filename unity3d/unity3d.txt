@@ -10,3 +10,10 @@ Exempel 2:      Level 2         nybörjare
 
 
 Exempel 3:      Level 3         ...
+
+
+Reseach Recursions
+https://www.youtube.com/watch?v=Z6VwROzpSZg
+http://www.8bitavenue.com/2017/11/reverse-string-using-recursion-in-python/
+https://giphy.com/gifs/recursive-9NuqGidoBojg4
+https://giphy.com/gifs/loop-cauliflower-uvDP3biuEFnG0
