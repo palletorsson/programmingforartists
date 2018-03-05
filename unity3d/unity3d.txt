@@ -1,1 +1,12 @@
-Read me for unity 3d
+Read me for Unity 3d
+
+Codeing for absulute beginners 
+Codeing för nybörjare
+
+Exempel 1:      Level 1         nybörjare   
+
+
+Exempel 2:      Level 2         nybörjare
+
+
+Exempel 3:      Level 3         ...
