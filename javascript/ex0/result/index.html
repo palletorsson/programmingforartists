@@ -31,6 +31,7 @@
         </style>
     </head>
     <body>
+
         <div class="container">
             <div class="button-container">
                 <button>hack</button>
@@ -40,13 +41,23 @@
             </div>
         </div>
         <script>
-            var hiddenBox = $( "#banner-message" );
-            hiddenBox.hide();
-            $( ".button-container button" ).on( "click", function( event ) {
-                hiddenBox.show();
-            });
+            /* a banner that is hidden */
+            var hiddenBox = $( "#banner-message" );    
+           //  hiddenBox.hide();
+            // by clicking the link the text will show 
+            $( ".button-container button" ).hover(
+                
+                function() {
+                    hiddenBox.hide();
+                }
+        
+            );
         </script>
+
     </body>
 </html>
+
+
+
 
 

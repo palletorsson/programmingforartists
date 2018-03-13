@@ -31,6 +31,9 @@
                 font-size: 24px;
                 text-transform: uppercase; 
             }
+            .count {
+                background-color: white; 
+            }
         </style>
     </head>
     <body>
@@ -38,18 +41,43 @@
             <div class="button">
                 off
             </div>
+            <div class="count"> 1 </div>
         </div>
         <script>
             $('.button').click(function() {
-                console.log("clicket"); 
-                if ($( this ).text() == 'off') {
-                    $( this ).css({backgroundColor:'green'});
-                    $( this ).text('on');
+                // 
+                var num = $('.count').text()
+                // c = 1
+                var number = addNumber(num) 
+                // number is 2
+                $('.count').text(number);
+                var elem  = $( this ); // 
+                var onoff = elem.text();
+                
+                changeElem(onoff, elem); 
+                changeElem(onoff, elem); 
+
+            }); 
+
+            function addNumber(num) {
+                // konvertera till nummer
+                num = parseInt(num); 
+                // adder med 1
+                var res = num + 1; 
+                // ge tillbaka resultatet
+                return res; 
+              
+            } 
+            function changeElem(onoff, elem) {
+                console.log(onoff)
+                if ( onoff == 'off') {
+                    elem.css({backgroundColor:'green'});
+                    elem.text('on');
                 }  else {
-                    $( this ).css({backgroundColor:'red'});
-                    $( this ).text('off');
+                    elem.css({backgroundColor:'red'});
+                    elem.text('off');
                 }
-            });    
+            } 
         </script>
     </body>
 </html>

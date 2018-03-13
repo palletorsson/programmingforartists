@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<!-- saved from url=(0035)file:///Users/pato/Desktop/song.htm -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <title>hover demo</title>
+  <style>
+    body {
+       background-color: white;
+    }
+    .color {
+        text-align: center;
+        font-size: 50px;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; 
+        height: 400px; 
+        top: 400px; 
+        position: relative; 
+        color:  white; 
+    }
+
+  </style>
+  <script src="./hover demo_files/jquery-1.10.2.js"></script>
+</head>
+<body>
+
+    
+     <div class="color"> text </div>
+<script>
+    // light upp color
+   
+    var elem = $(".color"); 
+   
+    var txt = elem.text();
+    var trimed = txt.trim()
+    var splited = trimed.split('');
+    elem.text(''); 
+    var endDivs = ''
+
+   for (i=0; i < splited.length; i++) {
+       endDivs = endDivs + '<span id="rev'+i+'" >' +splited[i]+ '</span>'
+   }
+   elem.html(endDivs); 
+    console.log("the txt: ", txt); 
+    var x = 'some string';
+  
+    console.log( "the char: ",  txt.charAt(1) );
+   
+    $(".color").hover({
+ 
+       
+    });  
+    function theLight(i) {
+        setTimeout(() => {
+            console.log('#rev'+i)
+            $('#rev'+i).fadeIn('slow')
+        }, i*500);   
+    };
+
+    
+    // text.split
+    var grey = 'gray'; 
+     
+
+    
+</script>
+
+  
+
+
+</body></html>
