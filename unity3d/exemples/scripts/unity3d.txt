@@ -18,3 +18,5 @@ http://catlikecoding.com/unity/tutorials/constructing-a-fractal/
 http://www.8bitavenue.com/2017/11/reverse-string-using-recursion-in-python/
 https://giphy.com/gifs/recursive-9NuqGidoBojg4
 https://giphy.com/gifs/loop-cauliflower-uvDP3biuEFnG0
+
+https://th0mas.nl/2013/05/19/rendering-recursive-portals-with-opengl/
