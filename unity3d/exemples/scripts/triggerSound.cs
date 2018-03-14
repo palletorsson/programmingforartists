@@ -7,11 +7,15 @@ public class triggerSound : MonoBehaviour {
 
 	// Use this for initialization
 	public void Awake () {
+		// gets the public component to be
 		source = GetComponent<AudioSource> ();
 	}
 
 	public void OnTriggerEnter(Collider other) {
 		source.Play (); 
 	}
-
+	public void OnTriggerExit(Collider other)
+	{
+		source.Stop (); 
+	}
 }
