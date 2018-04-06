@@ -1,0 +1,20 @@
+Read me for Unity 3d
+
+Codeing for absulute beginners 
+Codeing för nybörjare
+
+Exempel 1:      Level 1         nybörjare   
+
+
+Exempel 2:      Level 2         nybörjare
+
+
+Exempel 3:      Level 3         ...
+
+
+Level 4 -  Research Recursions
+https://www.youtube.com/watch?v=Z6VwROzpSZg
+http://catlikecoding.com/unity/tutorials/constructing-a-fractal/
+http://www.8bitavenue.com/2017/11/reverse-string-using-recursion-in-python/
+https://giphy.com/gifs/recursive-9NuqGidoBojg4
+https://giphy.com/gifs/loop-cauliflower-uvDP3biuEFnG0
