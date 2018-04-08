@@ -13,7 +13,7 @@
 // 4. Add another cube [X] and drag it to hover of the first cube. 
 
 // 5. Add this script to your Assets folder
-// Drag the script on to the cube
+// Drag the script on to the second cube
 
 // 6. Drag a audio source in to the slot. 
 
