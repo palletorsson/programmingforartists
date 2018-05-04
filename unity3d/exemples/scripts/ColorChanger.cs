@@ -1,7 +1,10 @@
 ﻿// Programming for Artist Unity Exempel 1
 // --------------------------------------
-// 1. Add a cube to the Scene
+// 1. Add a the gameObject cube to the Scene
+// https://docs.unity3d.com/Manual/GameObjects.html
+
 // 2. Add this script to your Assets folder
+
 // 3. Drag the script on to the cube
 
 using UnityEngine;
