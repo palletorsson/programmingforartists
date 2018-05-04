@@ -1,1 +1,2 @@
-processing read me
+1. rectSize.pde : canvas, size(), rect()
+2. strokeFillEllipse.pde : ellipse(), 
