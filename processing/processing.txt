@@ -1,2 +1,2 @@
-1. rectSize.pde : canvas, size(), rect()
-2. strokeFillEllipse.pde : ellipse(), 
+se: 
+https://docs.google.com/document/d/1oEDkh0FM3fse_sBgAekYaB0nQajPSLV1XFpWJbjvOYc/
