@@ -3,7 +3,7 @@ int cellsize = 40;
 int halfsize = cellsize/2; 
 
 void setup() {
-  size(800, 800);
+  size(800, 80);
   background(255);
 }
 
