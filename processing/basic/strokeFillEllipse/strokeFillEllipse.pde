@@ -1,6 +1,4 @@
 // setup() körs en gång när programmet börjar
-
-// setup() körs en gång när programmet börjar
 void setup() {
     size(600,400); // måste stå först 
     background(0,0,0); // background(r,g,b); sätt färg på bakgrunden  
