@@ -1,7 +1,7 @@
 PImage img;
 int w = 1048; 
 int h = 699; 
-String imgName = "fman13.jpg"; 
+String imgName = "zuckerberg.jpg"; 
 int colort = 350; // ta alla vita färger 
 int reftish =  1; 
 
