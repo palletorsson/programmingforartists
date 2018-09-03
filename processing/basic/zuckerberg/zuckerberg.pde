@@ -15,14 +15,14 @@ void draw() {
   loadPixels();
   for (int i = 0; i < pixels.length-1; i++) {
     int rand = floor(random(100)); 
-    // inte första raden och vi 1% av pixlarna
+    // inte första raden och vid 1% av pixlarna
     if (i > w && rand < 1) {
       int c = pixels[i-(w)];  
       float r = red(img.pixels[i]); // hämta värdet för rött 
       float g = green(img.pixels[i]); // hämta värdet för grön 
       float b = blue(img.pixels[i]); // hämta värdet för blått
       int cl = floor(r+g+b);
-      // skapa den rinnande effekt kopiera färgen<- 
+      // skapa den rinnande effekt kopiera färgen <- 
       if (cl < colort) {
          pixels[i] = c;
          pixels[i+1] = c;
