@@ -1,15 +1,17 @@
 PImage img;
-int pointillize = 6;
-int cellsize = 5; 
+int cellsizeX = 2; 
+int cellsizeY = 2; 
 int cols, rows; 
 
+// byt ut värdet på cell
 void setup() {
-  size(1000, 667);
+  // storleken på fönstet får inte var större än bildens pixlar
+  size(800, 800);
   img = loadImage("img.jpg");
   background(255);
   smooth();
-  cols = width/cellsize;             // Räkna ut # of columner
-  rows = height/cellsize;            // Räkna ut # of rader
+  cols = width/cellsizeX;             // Räkna ut # of columner
+  rows = height/cellsizeY;            // Räkna ut # of rader
 }
 
 void draw() {
@@ -17,8 +19,8 @@ void draw() {
   for ( int i = 0; i < cols; i++) {
     // Begin loop for rows
     for ( int j = 0; j < rows; j++) {      
-      int x = i*cellsize + cellsize/2; // x position
-      int y = j*cellsize + cellsize/2; // y position
+      int x = i*cellsizeX + cellsizeX; // x position
+      int y = j*cellsizeY + cellsizeY; // y position
       int loc = x + y*width;           // pixel plats
       float r = red(img.pixels[loc]);
       float g = green(img.pixels[loc]);
@@ -28,4 +30,10 @@ void draw() {
       ellipse(x, y, mouseX/10-10, mouseY/10-10);
     }
   }
+  if (cellsizeX < 16) {
+  cellsizeX = 2; 
+  cellsizeY  = 2; 
+  }
+  cellsizeX++; 
+  cellsizeY++; 
 }
