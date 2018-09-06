@@ -32,12 +32,15 @@ void draw() {
       float g = green(img.pixels[loc]);
       float b = blue(img.pixels[loc]);
       // ändra fill färgen 
-      fill(r, g, b, 100);
+      float n2 = noise(t+100); 
+      float n3 = noise(t+100);
+      float n4 = noise(t+100);
+      fill(n2, n3, n4, 100);
       float n1 = noise(t);
       //float n2 = noise(t+100); 
       float r1 = random(cellscaleY*2); 
-      fill(r, g, b, 255);
-      //ellipse(x, y, mouseX/10, mouseY/10);
+     // fill(r, g, b, 255);
+      ellipse(x, y, mouseX/10, mouseY/10);
       //ellipse(x+(n1*cellscaleY*2)/2, y+(n1*cellscaleY*2)/2, n1*cellscaleY*2, n1*cellscaleY*2);
       ellipse(x, y, r1, r1);
     }
