@@ -36,13 +36,13 @@ void setup() {
 
 void draw() {
   background(0);
-
+noStroke();
   // Get the raw depth as array of integers
   int[] depth = kinect.getRawDepth();
 
   // We're just going to calculate and draw every 4th pixel (equivalent of 160x120)
   int skip = 10;
-
+  directionalLight(204, 204, 204, 0, 0, -1);
   // Translate and rotate
   translate(width/2, height/2, -50);
   //rotateY(a);
@@ -58,7 +58,7 @@ void draw() {
       PVector v = depthToWorld(x, y, rawDepth); 
       pushMatrix();
       // Scale up by 400
-      float factor = 400;
+      float factor = 800;
       translate(v.x*factor, v.y*factor, factor-v.z*factor);
       // vertex(v.x*factor, v.y*factor, factor-v.z*factor);
       
@@ -71,15 +71,17 @@ void draw() {
       ellipse(0, 0, 4, 4);
       
       // use text
-      textSize(v.x*40);
-      text(abs(floor(v.x*100)), 2, 2);
+      //textSize(40);
+      text(abs(floor(v.x*100)), 4, 4);
       
-      // use boxes
-      rotateX(PI/v.z); 
-      rotateY(PI/v.z);
-      specular(v.x, v.y, v.z);
-      box(22);
-              
+      // use boxes spheres
+      rotateZ(PI/v.z); 
+      rotateY(PI/v.y);
+      rotateX(PI/v.x);
+      //lightSpecular(v.x, v.y, v.z);
+      //box(50-(v.z*10));
+     
+      sphere(mouseX*(v.z*mouseY/100));        
       popMatrix();
     }
   }

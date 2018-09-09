@@ -1,22 +1,23 @@
 PImage img;
-int cellscaleX = 10; 
-int cellscaleY = 10; 
+int cellscaleX = 100; 
+int cellscaleY = 100; 
 int cols, rows; 
 float t = 0; 
 // byt ut värdet på cell
 void setup() {
   // storleken på fönstet får inte var större än bildens pixlar
-  size(1000, 667);
+  size(1000, 500);
   img = loadImage("img.jpg");
   background(255);
   smooth();
   cols = width/cellscaleX;             // Räkna ut # of columner
   rows = height/cellscaleY;            // Räkna ut # of rader
-  noStroke();
+  //noStroke();
 }
-
+// en kurs, it not selfavare
 void draw() {
-  background(0);
+  if (keyPressed == true)
+  //background(255);
   loadPixels();
   // loopa columner
   for ( int i = 0; i < cols; i++) {
@@ -33,17 +34,25 @@ void draw() {
       float b = blue(img.pixels[loc]);
       // ändra fill färgen 
       float n2 = noise(t+100); 
-      float n3 = noise(t+100);
-      float n4 = noise(t+100);
-      fill(n2, n3, n4, 100);
+      float n3 = noise(t+200);
+      float n4 = noise(t+300);
+      //fill(random(255), random(255), random(255),  255);
+      fill(n2*mouseX/2, n2*200, n3*mouseY/2, 4);
+      println(n3*400);
       float n1 = noise(t);
       //float n2 = noise(t+100); 
-      float r1 = random(cellscaleY*2); 
-     // fill(r, g, b, 255);
-      ellipse(x, y, mouseX/10, mouseY/10);
+      float r1 = random(cellscaleY*2);
+      float r2 = random(cellscaleY*2); 
+      // fill(r, g, b, 255);
+      if (mouseX % 4 == 0) {
+        ellipse(x, y,  r1, r2);
+      } else {
+        ellipse(x, y, n2*400, n3*400);
+      }
       //ellipse(x+(n1*cellscaleY*2)/2, y+(n1*cellscaleY*2)/2, n1*cellscaleY*2, n1*cellscaleY*2);
-      ellipse(x, y, r1, r1);
+      
+       t = t + 0.00002; 
     }
   }
-  t = t + 0.1; 
+  //t = t + 0.1; 
 }

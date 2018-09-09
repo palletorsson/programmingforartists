@@ -21,6 +21,7 @@ void draw() {
   if (myVideo.available()) {
     myVideo.read();
     myVideo.loadPixels();
+    // copy(src, sx, sy, sw, sh, dx, dy, dw, dh)
     copy(myVideo, (myVideo.width/2), mouseY/4, mouseY/4+6, myVideo.height, (x%width), 0, 6, height);
     myVideo.updatePixels();
     x++;
