@@ -1,4 +1,3 @@
-
 StringList listOfPersons;
 StringList finalList;
 
@@ -6,7 +5,7 @@ String currentOne = "";
 String currentTwo = "";
 int count = 1; 
 String[] dListOfPersons = {
-  "palle", "maja", "sara", "feliz", "katten", "hunden", "foo", "bar"
+  "Ida", "Adam", "William", "Majli", "Hanna.S", "Amanda", "Hanna", "Signe", "Rut","Ulrika"
 }; 
 
 void setup() {
