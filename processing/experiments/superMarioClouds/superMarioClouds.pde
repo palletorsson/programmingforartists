@@ -1,3 +1,5 @@
+// Reconstruction Cory Archangels Super Mario Clouds in processing
+
 PImage big;
 PImage small; 
 PImage small2; 
@@ -12,8 +14,9 @@ int sw2 = 500;
 int sm2 = 300; 
 int sw3 = 200; 
 int sm3 = 100; 
+
 void setup() {
-  size(800, 600); 
+  size(800, 400); 
   background(89, 145, 255); 
   big = loadImage("big.jpg"); 
   small = loadImage("small.jpg"); 
