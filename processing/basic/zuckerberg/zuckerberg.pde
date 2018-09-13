@@ -6,7 +6,7 @@ int colort = 350; // ta alla vita färger
 int reftish =  1; 
 
 void setup() { 
-  size(1048,699); 
+  size(1048, 699); 
   img = loadImage(imgName);
   image(img, 0, 0, width, height);
 }
@@ -14,7 +14,7 @@ void setup() {
 void draw() {  
   loadPixels();
   for (int i = 0; i < pixels.length-1; i++) {
-    int rand = floor(random(100)); 
+    int rand = floor(random(50)); 
     // inte första raden och vid 1% av pixlarna
     if (i > w && rand < 1) {
       int c = pixels[i-(w)];  
@@ -24,12 +24,16 @@ void draw() {
       int cl = floor(r+g+b);
       // skapa den rinnande effekt kopiera färgen <- 
       if (cl < colort) {
-         pixels[i] = c;
-         pixels[i+1] = c;
-         pixels[i-1] = c;
+        pixels[i] = c;
+        pixels[i+1] = c;
+        pixels[i-1] = c;
       }
     }
   }
   updatePixels(); 
-  //save(imgName);   
+  //save(imgName);
 }
+
+void mouseClicked() {
+  image(img, 0, 0, width, height);
+} 
