@@ -18,7 +18,7 @@ void mouseReleased() {
   // generera linjer
   for (int y = 0; y < width; y += s) {
     for (int x = 0; x < height; x += s) {
-      // Random forward or backward slash
+      // Slumpvis framåt- eller bakåt-streck
       float r = random(1);
       if (r < odds) {
         line(x, y, x + s, y + s);

@@ -1,5 +1,5 @@
-int s = 23; // Tile Size
-float odds = 0.5; // Slash distribution
+int s = 23; // Tilestorlek
+float odds = 0.5; // dela upp distribution
 
 void setup() {
   size(500, 500);
@@ -13,10 +13,10 @@ void draw () {}
 
 void mouseClicked() {
   background(62, 67, 209);
-  // Loops generate grid of lines
+  // generera linjer
   for (int y = 0; y < width; y += s) {
     for (int x = 0; x < height; x += s) {
-      // Random forward or backward slash
+      // Slumpvisa framåt- eller bakåt-streck
       if (random(1) < odds) {
         line(x, y, x + s, y + s);
       } else {
