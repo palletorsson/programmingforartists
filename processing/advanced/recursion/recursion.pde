@@ -1,11 +1,9 @@
-int x, y;
 int size = 0;
-int spread = 3; 
+int spread = 5; 
 
 void setup() {
   size(1000, 700);
-  background(255);
-  stroke(0); 
+  background(255); 
   noFill(); 
   stroke(255, 0, 0);
 }
@@ -20,11 +18,12 @@ void draw() {
 }
 
 void mirrorSphere(float x, float y, float s) {
+  //rotate(1);
   if (s > 10) {
     ellipse(x, y, s, s);
     mirrorSphere(x + (s/spread), y, s*0.5);
     mirrorSphere(x - (s/spread), y, s*0.5);
-   // mirrorSphere(x, y + (s/spread), s*0.5);
-   // mirrorSphere(x, y - (s/spread), s*0.5);
+    //mirrorSphere(x, y + (s/spread), s*0.5);
+    //mirrorSphere(x, y - (s/spread), s*0.5);
   } 
 }
