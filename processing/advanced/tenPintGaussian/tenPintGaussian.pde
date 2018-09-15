@@ -1,4 +1,4 @@
-
+// 10 print i processing
 
 int s = 23; // Tilestorlek
 float odds = 0.2; // dela upp distribution
