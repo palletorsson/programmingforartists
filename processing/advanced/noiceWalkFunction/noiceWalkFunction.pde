@@ -16,13 +16,15 @@ void draw() {
 
 void randomMove() {
   if (mouseX < 300) { 
+    stroke(0,0,255);
     xPos = xPos + (int)random(-10, 10);
     yPos = yPos + (int)random(-10, 10);
   } else {
+    stroke(255,0,0);
     xPos = xPos + (noise(time)-0.5)*5;
     yPos = yPos + (noise(time+30)-0.5)*5;
   }
-  time = time + 0.01; 
+  time = time + 0.05; 
   line(xPos, yPos, xPosNext, yPosNext);
   xPosNext = xPos;
   yPosNext = yPos;
