@@ -27,7 +27,7 @@ class Kryp {
     vect = new PVector(_x, _y);
     theSize = _theSize;
     kColor = color(random(255), random(255), random(255));
-    maxspeed = 1;
+    maxspeed = 0.4;
     maxforce = 0.2;
     time = 0; 
     acceleration = new PVector(0, 0);
@@ -38,7 +38,6 @@ class Kryp {
 
   // samla alla funtioner i en run-funktion
   void run() {
-    display();
     move();
     gravity(); 
     wind(); 
@@ -49,13 +48,15 @@ class Kryp {
     vect.add(velocity);
     // Reset accelertion to 0 each cycle
     acceleration.mult(0);
+    display();
   }
 
   // så här visar vi upp krypet
   void display() {
-   
+    
     fill(kColor);    
     ellipse(vect.x, vect.y, theSize, theSize);
+    
   }
 
   // krypet rör sig, uppdatera postionen x och y  
@@ -63,33 +64,34 @@ class Kryp {
     vect.x += noise(time)-1;
     vect.y += noise(time+10)-1;
     time+=0.001; 
+  
   }
 
   // graviations-funtion 
   void gravity() {
-    //gravityForce = mouseY/100-2; 
+    gravityForce = mouseY/300; 
     vect.y += gravityForce;
   }
 
   // vind-funktion
   void wind() {
-    ///windForce = mouseX/100-2; 
+    windForce = mouseX/300; 
     vect.x += windForce;
   }
 
 
   // kant-funktion
   void edges() {
-    if (vect.x > width-10) {
+    if (vect.x > width+10) {
       vect.x = 0.5;
     }
-    if (vect.y > height-10) {
+    if (vect.y > height+10) {
       vect.y = 1;
     }
-    if (vect.x < 10) {
+    if (vect.x < -10) {
       vect.x = width;
     }
-    if (vect.y < 10) {
+    if (vect.y < -10) {
       vect.y = height;
     }
   }

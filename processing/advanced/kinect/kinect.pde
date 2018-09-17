@@ -18,7 +18,7 @@ float[] depthLookUp = new float[2048];
 
 void setup() {
   // Rendering in P3D
-  size(800, 600, P3D);
+  size(800, 700, P3D);
   kinect = new Kinect(this);
   kinect.initDepth();
 
@@ -36,7 +36,7 @@ void setup() {
 
 void draw() {
   background(0);
-noStroke();
+  noStroke();
   // Get the raw depth as array of integers
   int[] depth = kinect.getRawDepth();
 
@@ -61,27 +61,27 @@ noStroke();
       float factor = 800;
       translate(v.x*factor, v.y*factor, factor-v.z*factor);
       // vertex(v.x*factor, v.y*factor, factor-v.z*factor);
-      
+
       // Draw a point
       color c = dPixels.pixels[offset]; 
       //point(0, 0);
       stroke(c); 
       fill(c);
-      
-      ellipse(0, 0, 4, 4);
-      
+
+      //ellipse(0, 0, 4, 4);
+
       // use text
       //textSize(40);
-      text(abs(floor(v.x*100)), 4, 4);
-      
+      //text(abs(floor(v.z*100)), 4, 4);
+
       // use boxes spheres
-      rotateZ(PI/v.z); 
-      rotateY(PI/v.y);
-      rotateX(PI/v.x);
+      // rotateZ(PI/v.z); 
+      // rotateY(PI/v.y);
+      // rotateX(PI/v.x);
       //lightSpecular(v.x, v.y, v.z);
-      //box(50-(v.z*10));
-     
-      sphere(mouseX*(v.z*mouseY/100));        
+      box(50-(v.z*20));
+
+      //sphere(mouseX*(v.z*mouseY/100));        
       popMatrix();
     }
   }
