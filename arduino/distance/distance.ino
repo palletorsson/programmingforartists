@@ -1,16 +1,18 @@
 // definiera pinnummer
-const int trigPin = 9;
-const int echoPin = 10;
+const int trigPin = 4;
+const int echoPin = 5;
 
 // definiera variabler
 long duration;
 int distance;
-
+const int soundPin1 = 7;
+ 
 void setup() {
   pinMode(trigPin, OUTPUT); // Sätt trigPin som en utgång
   pinMode(echoPin, INPUT); // Sätt echoPin som ingång 
   Serial.begin(9600); // Starta seriell kommunication
   Serial.println("Börjar läsa avstånd");
+  pinMode(soundPin1, OUTPUT); 
 }
 void loop() {
   // återställ trigPin
@@ -26,12 +28,13 @@ void loop() {
   distance= duration*0.034/2;
   // Om avståndet är för kort skriv ut avståndet i det seriella fönstret
   
-  if (distance < 20) {
+  if (distance < 100) {
     Serial.println("");
-    Serial.println("Avstånd för kort");
+    Serial.println("Läser avstånd");
     Serial.println(distance);
-    delay(1000); 
-    Serial.println("Läser avstånd igen ");
+    delay(distance); 
   } 
+  int pitch = map(distance, 0, 100, 200, 50);
+  tone(soundPin1, pitch, pitch);
     
 }
