@@ -15,7 +15,7 @@ int channelB_Motor13 = 13;
 int channelB_Speed11 = 11;
 int channelB_Brake8 = 8; 
 
-int moveAFarward = 1; 
+int moveAFarward = 0; 
 int moveBFarward = 0; 
 int moveABFarward = 0;
 int moveABackward = 0; 
@@ -108,4 +108,3 @@ void brakeAll() {
   digitalWrite(channelA_Brake9, HIGH);  
   digitalWrite(channelB_Brake8, HIGH); 
 }
-

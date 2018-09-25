@@ -1,6 +1,8 @@
 #!/usr/bin/python
 # -*- coding: UTF-8 -*-
 
+print('Hello, World.')
+
 # skapa en variabel och initiera den "hello", 4 - dynamiskt typat, underscore
 hello_text = "hello"
 my_int = 4
@@ -35,7 +37,6 @@ def is_it_monday():
 
 print is_it_monday()
 
-
 # funktion med standardvärdet för ett argument
 import random 
 
@@ -54,6 +55,14 @@ def is_the_world_ending (answer="yes"):
 print is_the_world_ending()
 print is_the_world_ending("no")
 
+# skapa list och läs med while
+words = ['one', 'two', 'three', 'four', 'five']
+
+n = 0
+while(n < 5):
+    print(words[n])
+    n += 1
+
 # skapa list och läs den med loop
 my_list_1 = ["dog", "cat", "mouse"]
 my_list_2 = ["tiger", "bear", "monky"]
@@ -63,9 +72,62 @@ print my_list_1[0] + "" + my_list_2[2]
 for i in range(0,2):
     print my_list_1[i] + "" + my_list_2[i]
 
-# main konstruktion
+
 # importera lista från annan fil
+
+
+# läs webbsida och kolla vilka ord som är vanligast
+import urllib
+from bs4 import BeautifulSoup
+
+link = "http://www.nettime.org/nettime/DOCS/3/andreas.html"
+f = urllib.urlopen(link)
+myfile = f.read()
+
+cleantext = BeautifulSoup(myfile, "lxml").text
+
+word_list = cleantext.split()
+
+word_counter = {}
+for word in word_list:
+    if word in word_counter:
+        word_counter[word] += 1
+    else:
+        word_counter[word] = 1
+
+popular_words = sorted(word_counter, key = word_counter.get, reverse = True)
+top_3 = popular_words[:60]
+print top_3
+
 # läs och skriv till fil
-# läs webbsida
-# läs json
 # spara json
+
+
+# läs json
+
+# main konstruktion
+def main():
+    kitten()
+
+def kitten():
+    print('Meow.')
+
+if __name__ == '__main__': main()
+
+# classkonstruktion
+class Duck:
+    sound = 'Quack quack.'
+    movement = 'Walks like a duck.'
+
+    def quack(self):
+        print(self.sound)
+
+    def move(self):
+        print(self.movement)
+
+def main():
+    donald = Duck()
+    donald.quack()
+    donald.move()
+
+if __name__ == '__main__': main()
