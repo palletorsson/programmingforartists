@@ -19,12 +19,16 @@ int_print()
 def add (a, b): 
     return a+b
 
+# använd funktionen och skriv ut dess värd
 r = add(my_int, my_float)
 print "Printing result from add function "  + str(r)
 
-
-# importera ett biblotek
+# importera och använd ett bibliotek
 from datetime import date
+from datetime import datetime
+
+today = datetime.now()
+print  ("The current date and time is ", today)
 
 # funktion med villkorligt flöde - if, elif, else
 def is_it_monday(): 
@@ -63,7 +67,7 @@ while(n < 5):
     print(words[n])
     n += 1
 
-# skapa list och läs den med loop
+# skapa list och läs den med for-loop
 my_list_1 = ["dog", "cat", "mouse"]
 my_list_2 = ["tiger", "bear", "monky"]
 
@@ -99,20 +103,71 @@ popular_words = sorted(word_counter, key = word_counter.get, reverse = True)
 top_3 = popular_words[:60]
 print top_3
 
-# läs och skriv till fil
+
 # spara json
 
 
 # läs json
+# 
+# Example file for parsing and processing JSON
+#
 
-# main konstruktion
+import urllib.request # instead of urllib2 like in Python 2.7
+import json
+
+def printResults(data):
+  # Use the json module to load the string data into a dictionary
+  theJSON = json.loads(data)
+  
+  # now we can access the contents of the JSON like any other Python object
+  if "title" in theJSON["metadata"]:
+    print (theJSON["metadata"]["title"])
+  
+  # output the number of events, plus the magnitude and each event name  
+  count = theJSON["metadata"]["count"];
+  print (str(count) + " events recorded")
+  
+  # for each event, print the place where it occurred
+  for i in theJSON["features"]:
+    print (i["properties"]["place"])
+  print ("--------------\n")
+
+  # print the events that only have a magnitude greater than 4
+  for i in theJSON["features"]:
+    if i["properties"]["mag"] >= 4.0:
+      print ("%2.1f" % i["properties"]["mag"], i["properties"]["place"])
+  print ("--------------\n")
+
+  # print only the events where at least 1 person reported feeling something
+  print ("\n\nEvents that were felt:")
+  for i in theJSON["features"]:
+    feltReports = i["properties"]["felt"]
+    if (feltReports != None):
+      if (feltReports > 0):
+        print ("%2.1f" % i["properties"]["mag"], i["properties"]["place"], " reported " + str(feltReports) + " times")
+  
+  
 def main():
-    kitten()
+  # define a variable to hold the source URL
+  # In this case we'll use the free data feed from the USGS
+  # This feed lists all earthquakes for the last day larger than Mag 2.5
+  urlData = "http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_day.geojson"
+  
+  # Open the URL and read the data
+  webUrl = urllib.request.urlopen(urlData)
+  print ("result code: " + str(webUrl.getcode()))
+  if (webUrl.getcode() == 200):
+    data = webUrl.read()
+    # print out our customized results
+    printResults(data)
+  else:
+    print ("Received an error from server, cannot retrieve results " + str(webUrl.getcode()))
 
-def kitten():
-    print('Meow.')
+if __name__ == "__main__":
+  main()
 
-if __name__ == '__main__': main()
+
+
 
 # classkonstruktion
 class Duck:
