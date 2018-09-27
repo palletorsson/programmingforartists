@@ -19,9 +19,10 @@ total_width = sum(widths)
 max_height = max(heights)
 
 new_im = Image.new('RGB', (total_width, max_height))
-
+new_im = new_im.resize((180,180), Image.ANTIALIAS)
 x_offset = 0
 for im in images:
+
   new_im.paste(im, (x_offset,0))
   x_offset += im.size[0]
 
