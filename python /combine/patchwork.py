@@ -3,27 +3,50 @@ from PIL import Image
 from os import listdir
 from os.path import isfile, join
 
-mypath = "./img"
-onlyfiles = [f for f in listdir(mypath) if isfile(join(mypath, f))]
-print onlyfiles
+def main():
+    columns = 16
+    y_offset = 8
+    x_offset = 8 
+    count = 0
+    resized = 180 
+    padding = 10
+    myPath = "./img/"
+    filewithpath = getImagesPath(myPath)
+    images = map(Image.open, filewithpath)
+    widths, heights = zip(*(i.size for i in images))
+    total_width = getTotalWidth(images, resized, padding)
+    max_height = getMaxHeight(heights, total_width, columns, padding)
 
-filewithpath = []
-for f in onlyfiles:
-    filewithpath.append(mypath+"/"+f)
+    new_im = Image.new('RGB', (total_width, max_height))
 
-print filewithpath
-images = map(Image.open, filewithpath)
-widths, heights = zip(*(i.size for i in images))
+    for im in images:
+        im = im.resize((resized, resized ), Image.ANTIALIAS)
+        new_im.paste(im, (x_offset, y_offset))
+        x_offset += im.size[0]+padding
+        count = count + 1
+        if count % columns == 0:
+            x_offset = padding 
+            y_offset += resized + padding
 
-total_width = sum(widths)
-max_height = max(heights)
+    new_im.save('test.jpg')
 
-new_im = Image.new('RGB', (total_width, max_height))
-new_im = new_im.resize((180,180), Image.ANTIALIAS)
-x_offset = 0
-for im in images:
+def getImagesPath(myPath): 
+	# andra detta till er path
+    mypath = myPath
+    onlyfiles = [f for f in listdir(myPath) if isfile(join(myPath, f))]
+    tempfilewithpath = []
 
-  new_im.paste(im, (x_offset,0))
-  x_offset += im.size[0]
+    for f in onlyfiles:
+        tempfilewithpath.append(myPath+f)
 
-new_im.save('test.jpg')
+    return tempfilewithpath
+
+def getTotalWidth(images, resized, padding): 
+	return (resized + padding) * len(images) / 3 
+
+def getMaxHeight(heights, total_width, columns, padding): 
+    rows = total_width / (columns+(padding*2))
+    max_height = (sum(heights) / columns * 2) + 100
+    return max_height
+
+if __name__ == '__main__': main()
