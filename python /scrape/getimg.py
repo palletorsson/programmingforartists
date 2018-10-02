@@ -22,6 +22,7 @@ for thumb in soup.find_all('img'):
         imglink = thumb.get('src')
         imglink = "https:"+imglink
         # ta bort temp i lanken 
+        # här måste jag kolla hur dom:en ser ut på wikipedia
         imglink = re.sub(r'/thumb', '', imglink)
         # dela upp lanken i tva delar fran sista slashen
         parts = imglink.rsplit('/',1)
