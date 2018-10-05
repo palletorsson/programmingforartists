@@ -20,8 +20,8 @@ GPIO.setup(push_button, GPIO.IN, pull_up_down=GPIO.PUD_UP)   # anvand LedPin som
 
 def play_song(song):
     track = dir_path+"/data/"+song  
-    omx_process = subprocess.Popen(("omxplayer", "-o", "local", track), stdout=subprocess.PIPE)
-    output = subprocess.Popen(("sudo", "../PirateRadio/pifm", "-", "107.1", "22050"), stdin=omx_process.stdout)
+    output = subprocess.Popen(["sudo", "../PiFmRds/src/pi_fm_rds", "-freq", "105.1", "-audio", track])
+    #output = subprocess.Popen(("sudo", "../PirateRadio/pifm", "-", "107.1", "22050"), stdin=omx_process.stdout)
 
 def stop_omxplayer():
     os.system('killall omxplayer.bin')
