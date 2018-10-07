@@ -1,14 +1,16 @@
+#!/usr/bin/python 
+# -*- coding: UTF-8 -*-
 # Tests
 # Feature layers
 # * ['block2_conv2']  - done
 # * ['block4_conv2']
 # ['block5_conv1']
 # Content weight
-# * 0.025 - done
-# * 0.021 
-# * 0.023 
-# * 0.027 
-# * 0.029 
+# * 
+# * 0.021, 0.023 
+# * 0.025 - done, base line 
+# * 0.027, 0.029  
+# * 0.031, 0.032 - ökad grynighet mer feature från style lyser igenom   
 # Style weight
 # * 5 - done
 # * 5.5 
@@ -20,6 +22,7 @@
 # Keras model
 # * vgg16 - done 
 # * vgg19
+
 from __future__ import print_function
 
 import time
@@ -39,27 +42,41 @@ from scipy.misc import imsave
 height = 512
 width = 512
 
-feature_layers = ['block1_conv2', 'block2_conv2',
-                  'block3_conv3', 'block4_conv3',
-                  'block5_conv3']
+feature_layers = ['block1_conv2', 'block2_conv2', 'block3_conv3', 'block4_conv3', 'block5_conv3']
 
-content_images 	= 	['images/base_image2.jpg'] #] #, 'images/img18.jpg', 'images/img10.jpg', 'images/greek.jpg', 'images/img21.jpg', ]
-style_images 	= 	['images/monet.jpg'] #, 'images/gu.jpg', 'images/wave.jpg', 'images/wave.jpg', 'images/wave.jpg',]
+#feature_layers = ['block1_conv1', 'block1_conv2', 'block2_conv2','block3_conv1', 'block3_conv2', 'block4_conv1','block5_conv1']
 
-tests = 1
+#feature_layers = ['block1_conv1', 'block2_conv2','block3_conv1',  'block4_conv1','block5_conv1']
+
+content_images 	= 	[ 'images/cambell.jpg', 'images/base_image2.jpg', 'images/dog.jpg', 'images/img21.jpg', 'images/img14.jpg', 'images/skriket.jpg', 'images/cans.jpg' ]
+style_images 	= 	[ 'images/cans.jpg', 'images/arabCaligraf.jpg', 'images/donald.jpg', 'images/img21.jpg', 'images/img33.jpg', 'images/skriket.jpg', 'images/cans.jpg']
+
+
 
 def main(): 
-    content_weight = 0.021
-    style_weight = 5.0
-    total_variation_weight = 1.0 
+    tests = 0
+    content_weight = 0.028
+    style_weight = 5.7
+    total_variation_weight = 1.4
+    playblocks = ['block4_conv2','block5_conv1','block5_conv1','block4_conv2']
+    content_weights = [0.021, 0.023, 0.025, 0.027, 0.029]
+    style_weights = [4.6, 4.8, 5.0, 5.2, 5.4]
+    conv_blocks = ['block2_conv2','block5_conv1','block4_conv2']
+    models = [VGG16, VGG19]
+
     # start the style transfer with iterations, 
     # content image and style image as argument
-    for index in range(5):
+    for index in range(7):
+    	print (tests)
     	if (tests == 0):
-            styleTransfere(10, content_images[index], style_images[index], index+12, content_weight, style_weight, total_variation_weight)
-        else: 
-            content_weight = content_weight + 0.002
-            styleTransfere(10,'images/f.jpg', 'images/monet.jpg', index+10, content_weight, style_weight, total_variation_weight)
+            print ("basic")
+            styleTransfere(14, content_images[index], style_images[index], index+25, content_weight, style_weight, total_variation_weight, 'block4_conv2')          
+        else:
+            print ("adv")
+            total_variation_weight = total_variation_weight + content_weight
+            content_weight = content_weight + 0.003
+            styleTransfere(20,'images/marlin.jpg', 'images/wave.jpg', index+20, content_weight, style_weight, total_variation_weight, playblocks[index%3])
+
 
 def getImagesPath(myPath): 
     # andra detta till er path
@@ -138,16 +155,16 @@ def deprocess_image(x):
     x = np.clip(x, 0, 255).astype('uint8')
     return x
 
-def styleTransfere(iterations, content_image_file, style_image_file, imageprefix, _content_weight=0.025, _style_weight=5.0, _total_variation_weight=1.0):
+def styleTransfere(iterations, content_image_file, style_image_file, imageprefix, _content_weight=0.025, _style_weight=5.0, _total_variation_weight=1.0, _conv_block='block2_conv2'):
 	
 	# crete content image and setup content array
     content_weight 			= _content_weight
     style_weight 			= _style_weight 
     total_variation_weight 	= _total_variation_weight
 
-    content_weight_file_sufix =  str(int(content_weight * 100)) 
-    style_weight_file_sufix =  str(int(style_weight)) 
-    total_variation_weight_file_sufix =  str(int(total_variation_weight)) 
+    content_weight_file_sufix =  int(content_weight * 1000)
+    style_weight_file_sufix =  int(style_weight*10)
+    total_variation_weight_file_sufix =  int(total_variation_weight*100) 
 
     content_image 	= setUpContentImage(content_image_file)
     content_array 	= createContentArray(content_image)
@@ -170,8 +187,8 @@ def styleTransfere(iterations, content_image_file, style_image_file, imageprefix
 
     # VGG16 layers
     layers = dict([(layer.name, layer.output) for layer in model.layers])
- 
-    layer_features = layers['block2_conv2'] # ['block4_conv2'], ['block5_conv1']
+    layer_choose = _conv_block
+    layer_features = layers[layer_choose]# ['block2_conv2']  ['block4_conv2'], ['block5_conv1']
   
     content_image_features = layer_features[0, :, :, :]
     combination_features = layer_features[2, :, :, :]
@@ -227,11 +244,17 @@ def styleTransfere(iterations, content_image_file, style_image_file, imageprefix
     evaluator = Evaluator()
 
     for i in range(iterations):
+    	fname = '%s_%s_%d_C_%d_S_%d_T_%d.jpg' % (layer_choose, imageprefix, i, content_weight_file_sufix, style_weight_file_sufix, total_variation_weight_file_sufix)
+      
         print('Start of iteration', i+1)
         start_time = time.time()
 
         x, min_val, info = fmin_l_bfgs_b(evaluator.loss, x.flatten(),
                                      fprime=evaluator.grads, maxfun=20)
+
+        # content_weight = content_weight + 0.001
+        # style_weight = style_weight - 0.1
+        # total_variation_weight = total_variation_weight + 0.05
 
         print('Current loss value:', min_val)
         end_time = time.time()
@@ -239,9 +262,9 @@ def styleTransfere(iterations, content_image_file, style_image_file, imageprefix
         print('Iteration %d completed in %ds' % (i, end_time - start_time))
         img = deprocess_image(x.copy())
         img = Image.fromarray(img)
-        fname = '%s_1_iteration_%d.jpg' % (imageprefix, i)
         img.save("./result/"+fname, "JPEG")
         print ('Saved image %s' % fname)
+        content_weight_file_sufix =  int(content_weight * 1000)
     
         if (i == 0):
             prolonged = int(end_time) - int(start_time)
