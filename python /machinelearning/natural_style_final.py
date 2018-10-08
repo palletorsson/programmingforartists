@@ -55,10 +55,10 @@ style_images 	= 	[ 'images/cans.jpg', 'images/arabCaligraf.jpg', 'images/donald.
 
 def main(): 
     tests = 0
-    content_weight = 0.028
-    style_weight = 5.7
-    total_variation_weight = 1.4
-    playblocks = ['block4_conv2','block5_conv1','block5_conv1','block4_conv2']
+    content_weight = 0.050
+    style_weight = 4.7
+    total_variation_weight = 1.2
+    playblocks = ['block4_conv2','block5_conv1','block4_conv2','block2_conv2']
     content_weights = [0.021, 0.023, 0.025, 0.027, 0.029]
     style_weights = [4.6, 4.8, 5.0, 5.2, 5.4]
     conv_blocks = ['block2_conv2','block5_conv1','block4_conv2']
@@ -66,16 +66,17 @@ def main():
 
     # start the style transfer with iterations, 
     # content image and style image as argument
-    for index in range(7):
+    for index in range(20):
     	print (tests)
     	if (tests == 0):
             print ("basic")
-            styleTransfere(14, content_images[index], style_images[index], index+25, content_weight, style_weight, total_variation_weight, 'block4_conv2')          
+            styleTransfere(6, style_images[index],  content_images[index], index+25, content_weight, style_weight, total_variation_weight, 'block4_conv2')          
         else:
             print ("adv")
             total_variation_weight = total_variation_weight + content_weight
-            content_weight = content_weight + 0.003
-            styleTransfere(20,'images/marlin.jpg', 'images/wave.jpg', index+20, content_weight, style_weight, total_variation_weight, playblocks[index%3])
+            content_weight = content_weight - 0.002
+            style_weight = style_weight + 0.02
+            styleTransfere(20,'images/3d.jpg', 'images/dwelling.jpg', index+20, content_weight, style_weight, total_variation_weight, playblocks[index%3])
 
 
 def getImagesPath(myPath): 
@@ -254,7 +255,8 @@ def styleTransfere(iterations, content_image_file, style_image_file, imageprefix
 
         # content_weight = content_weight + 0.001
         # style_weight = style_weight - 0.1
-        # total_variation_weight = total_variation_weight + 0.05
+        # 
+        total_variation_weight = total_variation_weight + 0.05
 
         print('Current loss value:', min_val)
         end_time = time.time()
