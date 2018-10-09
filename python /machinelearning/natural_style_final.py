@@ -48,35 +48,36 @@ feature_layers = ['block1_conv2', 'block2_conv2', 'block3_conv3', 'block4_conv3'
 
 #feature_layers = ['block1_conv1', 'block2_conv2','block3_conv1',  'block4_conv1','block5_conv1']
 
-content_images 	= 	[ 'images/cambell.jpg', 'images/base_image2.jpg', 'images/dog.jpg', 'images/img21.jpg', 'images/img14.jpg', 'images/skriket.jpg', 'images/cans.jpg' ]
-style_images 	= 	[ 'images/cans.jpg', 'images/arabCaligraf.jpg', 'images/donald.jpg', 'images/img21.jpg', 'images/img33.jpg', 'images/skriket.jpg', 'images/cans.jpg']
+content_images  =   [ 'images/3d.jpg', 'images/marlin.jpg'] #, 'images/dog.jpg', 'images/img21.jpg', 'images/img14.jpg', 'images/skriket.jpg', 'images/cans.jpg' ]
+style_images    =   [ 'images/cans.jpg', 'images/arabCaligraf.jpg', 'images/img14.jpg']#, 'images/img21.jpg', 'images/img33.jpg', 'images/skriket.jpg', 'images/cans.jpg']
 
 
 
 def main(): 
-    tests = 0
+    tests = 1
     content_weight = 0.050
     style_weight = 4.7
-    total_variation_weight = 1.2
+    total_variation_weight = 1.0
     playblocks = ['block4_conv2','block5_conv1','block4_conv2','block2_conv2']
-    content_weights = [0.021, 0.023, 0.025, 0.027, 0.029]
+    content_weights = [0.021, 0.023, 0.025, 0.027, 0.029, 0.031, 0.029, 0.027, 0.025, 0.023, 0.021]
     style_weights = [4.6, 4.8, 5.0, 5.2, 5.4]
     conv_blocks = ['block2_conv2','block5_conv1','block4_conv2']
-    models = [VGG16, VGG19]
+    models = ["VGG16", "VGG19"]
 
     # start the style transfer with iterations, 
     # content image and style image as argument
     for index in range(20):
-    	print (tests)
-    	if (tests == 0):
+        print (tests)
+        if (tests == 0):
             print ("basic")
-            styleTransfere(6, style_images[index],  content_images[index], index+25, content_weight, style_weight, total_variation_weight, 'block4_conv2')          
+            styleTransfere(6, style_images[index],  content_images[index], index+25, content_weight, style_weight, total_variation_weight, 'block4_conv2', VGG16)          
         else:
             print ("adv")
             total_variation_weight = total_variation_weight + content_weight
-            content_weight = content_weight - 0.002
-            style_weight = style_weight + 0.02
-            styleTransfere(20,'images/3d.jpg', 'images/dwelling.jpg', index+20, content_weight, style_weight, total_variation_weight, playblocks[index%3])
+            content_weight = content_weights[index%10]
+            style_weight = style_weights[index%5]
+            print (content_images[index%2])
+            styleTransfere(8, content_images[index%2], style_images[index%3], index+30, content_weight, style_weight, total_variation_weight, playblocks[index%3], models[index%2])
 
 
 def getImagesPath(myPath): 
@@ -156,22 +157,22 @@ def deprocess_image(x):
     x = np.clip(x, 0, 255).astype('uint8')
     return x
 
-def styleTransfere(iterations, content_image_file, style_image_file, imageprefix, _content_weight=0.025, _style_weight=5.0, _total_variation_weight=1.0, _conv_block='block2_conv2'):
-	
-	# crete content image and setup content array
-    content_weight 			= _content_weight
-    style_weight 			= _style_weight 
-    total_variation_weight 	= _total_variation_weight
+def styleTransfere(iterations, content_image_file, style_image_file, imageprefix, _content_weight=0.025, _style_weight=5.0, _total_variation_weight=1.0, _conv_block='block2_conv2', modelChoose="VVG16"):
+    
+    # crete content image and setup content array
+    content_weight          = _content_weight
+    style_weight            = _style_weight 
+    total_variation_weight  = _total_variation_weight
 
     content_weight_file_sufix =  int(content_weight * 1000)
     style_weight_file_sufix =  int(style_weight*10)
     total_variation_weight_file_sufix =  int(total_variation_weight*100) 
 
-    content_image 	= setUpContentImage(content_image_file)
-    content_array 	= createContentArray(content_image)
-	# crete style image and setup style array
-    style_image 	= setUpStyleImage(style_image_file)
-    style_array 	= createStyleArray(style_image) 
+    content_image   = setUpContentImage(content_image_file)
+    content_array   = createContentArray(content_image)
+    # crete style image and setup style array
+    style_image     = setUpStyleImage(style_image_file)
+    style_array     = createStyleArray(style_image) 
 
     #define variables in Keras' backend
     content_image = backend.variable(content_array)
@@ -183,13 +184,17 @@ def styleTransfere(iterations, content_image_file, style_image_file, imageprefix
                                     style_image,
                                     combination_image], axis=0)
     # Keras model to use 
-    model = VGG16(input_tensor=input_tensor, weights='imagenet',
-              		include_top=False)
+    if (modelChoose == "VVG16"): 
+        model = VGG16(input_tensor=input_tensor, weights='imagenet',
+                    include_top=False)
+    else: 
+        model = VGG19(input_tensor=input_tensor, weights='imagenet',
+                    include_top=False)
 
     # VGG16 layers
     layers = dict([(layer.name, layer.output) for layer in model.layers])
     layer_choose = _conv_block
-    layer_features = layers[layer_choose]# ['block2_conv2']  ['block4_conv2'], ['block5_conv1']
+    layer_features = layers[layer_choose] # ['block2_conv2']  ['block4_conv2'], ['block5_conv1']
   
     content_image_features = layer_features[0, :, :, :]
     combination_features = layer_features[2, :, :, :]
@@ -245,7 +250,7 @@ def styleTransfere(iterations, content_image_file, style_image_file, imageprefix
     evaluator = Evaluator()
 
     for i in range(iterations):
-    	fname = '%s_%s_%d_C_%d_S_%d_T_%d.jpg' % (layer_choose, imageprefix, i, content_weight_file_sufix, style_weight_file_sufix, total_variation_weight_file_sufix)
+        fname = '%s_%s_%d_C_%d_S_%d_T_%d.jpg' % (layer_choose, imageprefix, i, content_weight_file_sufix, style_weight_file_sufix, total_variation_weight_file_sufix)
       
         print('Start of iteration', i+1)
         start_time = time.time()
@@ -255,8 +260,7 @@ def styleTransfere(iterations, content_image_file, style_image_file, imageprefix
 
         # content_weight = content_weight + 0.001
         # style_weight = style_weight - 0.1
-        # 
-        total_variation_weight = total_variation_weight + 0.05
+        # total_variation_weight = total_variation_weight + 0.05
 
         print('Current loss value:', min_val)
         end_time = time.time()

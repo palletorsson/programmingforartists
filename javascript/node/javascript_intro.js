@@ -64,8 +64,8 @@ myObject = {
             [ 
                 {
                     name: "Earth",
-                    index: 3, 
-                    size: 234,
+                    index: 2, 
+                    radius: 93000000,
                     postions: {
                         x: 13421,
                         y: 437329, 
@@ -74,8 +74,8 @@ myObject = {
                 },
                 {
                     name: "Mars",
-                    index: 4, 
-                    size: 2345,
+                    index: 3, 
+                    radius: 141600000,
                     postions: {
                         x: 342221,
                         y: 3787329, 
@@ -89,4 +89,4 @@ myObject = {
 
 // 8. Ta ut element ur objektet.
 console.log(myObject.planets[0].name); 
-console.log(myObject.getDubbleSize(myObject.planets[0].size)); 
+console.log(myObject.getDubbleSize(myObject.planets[0].radius)); 
