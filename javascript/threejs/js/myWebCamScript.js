@@ -1,299 +1,258 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <title>three.js webgl - materials - video</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-        <style>
-            body {
-                background-color: #000;
-                color: #fff;
-                margin: 0px;
-                overflow: hidden;
-                font-family:Monospace;
-                font-size:13px;
-                text-align:center;
-                font-weight: bold;
-                text-align:center;
-            }
 
-            a {
-                color:#0078ff;
-            }
 
-            #info {
-                color:#fff;
-                position: absolute;
-                top: 5px; width: 100%;
-                z-index:100;
-            }
+if ( WEBGL.isWebGLAvailable() === false ) {
 
-        </style>
-    </head>
-    <body>
+    document.body.appendChild( WEBGL.getWebGLErrorMessage() );
 
-        <div id="info">
-            <a href="http://threejs.org" target="_blank" rel="noopener">three.js</a> - webgl video demo. playing <a href="http://durian.blender.org/" target="_blank" rel="noopener">sintel</a> trailer
-        </div>
+}
 
-        <script src="../build/three.js"></script>
+var container;
 
-        <script src="js/shaders/ConvolutionShader.js"></script>
-        <script src="js/shaders/CopyShader.js"></script>
+var camera, scene, renderer;
 
-        <script src="js/postprocessing/EffectComposer.js"></script>
-        <script src="js/postprocessing/RenderPass.js"></script>
-        <script src="js/postprocessing/MaskPass.js"></script>
-        <script src="js/postprocessing/BloomPass.js"></script>
-        <script src="js/postprocessing/ShaderPass.js"></script>
+var video, texture, material, mesh;
 
-        <script src="js/WebGL.js"></script>
+var composer;
 
-        <video id="video" autoplay loop crossOrigin="anonymous" webkit-playsinline style="display:none">
-            <source src="textures/sintel.ogv" type='video/ogg; codecs="theora, vorbis"'>
-            <source src="textures/sintel.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
-        </video>
+var mouseX = 0;
+var mouseY = 0;
 
-        <script>
+var windowHalfX = window.innerWidth / 2;
+var windowHalfY = window.innerHeight / 2;
 
-            if ( WEBGL.isWebGLAvailable() === false ) {
+var cube_count,
 
-                document.body.appendChild( WEBGL.getWebGLErrorMessage() );
+    meshes = [],
+    materials = [],
 
-            }
+    xgrid = 20,
+    ygrid = 10;
 
-            var container;
+init();
+animate();
 
-            var camera, scene, renderer;
+function init() {
 
-            var video, texture, material, mesh;
+    container = document.createElement( 'div' );
+    document.body.appendChild( container );
 
-            var composer;
+    camera = new THREE.PerspectiveCamera( 40, window.innerWidth / window.innerHeight, 1, 10000 );
+    camera.position.z = 500;
 
-            var mouseX = 0;
-            var mouseY = 0;
+    scene = new THREE.Scene();
 
-            var windowHalfX = window.innerWidth / 2;
-            var windowHalfY = window.innerHeight / 2;
+    var light = new THREE.DirectionalLight( 0xffffff );
+    light.position.set( 0.5, 1, 1 ).normalize();
+    scene.add( light );
 
-            var cube_count,
+    renderer = new THREE.WebGLRenderer();
+    renderer.setPixelRatio( window.devicePixelRatio );
+    renderer.setSize( window.innerWidth, window.innerHeight );
+    container.appendChild( renderer.domElement );
 
-                meshes = [],
-                materials = [],
+    video = document.getElementById( 'video' );
 
-                xgrid = 20,
-                ygrid = 10;
+    texture = new THREE.VideoTexture( video );
+    texture.minFilter = THREE.LinearFilter;
+    texture.magFilter = THREE.LinearFilter;
+    texture.format = THREE.RGBFormat;
 
-            init();
-            animate();
+    //
 
-            function init() {
+    var i, j, ux, uy, ox, oy,
+        geometry,
+        xsize, ysize;
 
-                container = document.createElement( 'div' );
-                document.body.appendChild( container );
+    ux = 1 / xgrid;
+    uy = 1 / ygrid;
 
-                camera = new THREE.PerspectiveCamera( 40, window.innerWidth / window.innerHeight, 1, 10000 );
-                camera.position.z = 500;
+    xsize = 480 / xgrid;
+    ysize = 204 / ygrid;
 
-                scene = new THREE.Scene();
+    var parameters = { color: 0xffffff, map: texture };
 
-                var light = new THREE.DirectionalLight( 0xffffff );
-                light.position.set( 0.5, 1, 1 ).normalize();
-                scene.add( light );
+    cube_count = 0;
 
-                renderer = new THREE.WebGLRenderer();
-                renderer.setPixelRatio( window.devicePixelRatio );
-                renderer.setSize( window.innerWidth, window.innerHeight );
-                container.appendChild( renderer.domElement );
+    for ( i = 0; i < xgrid; i ++ )
+    for ( j = 0; j < ygrid; j ++ ) {
 
-                video = document.getElementById( 'video' );
+        ox = i;
+        oy = j;
 
-                texture = new THREE.VideoTexture( video );
-                texture.minFilter = THREE.LinearFilter;
-                texture.magFilter = THREE.LinearFilter;
-                texture.format = THREE.RGBFormat;
+        geometry = new THREE.BoxBufferGeometry( xsize, ysize, xsize );
 
-                //
+        change_uvs( geometry, ux, uy, ox, oy );
 
-                var i, j, ux, uy, ox, oy,
-                    geometry,
-                    xsize, ysize;
+        materials[ cube_count ] = new THREE.MeshLambertMaterial( parameters );
 
-                ux = 1 / xgrid;
-                uy = 1 / ygrid;
+        material = materials[ cube_count ];
 
-                xsize = 480 / xgrid;
-                ysize = 204 / ygrid;
+        material.hue = i/xgrid;
+        material.saturation = 1 - j/ygrid;
 
-                var parameters = { color: 0xffffff, map: texture };
+        material.color.setHSL( material.hue, material.saturation, 0.5 );
 
-                cube_count = 0;
+        mesh = new THREE.Mesh( geometry, material );
 
-                for ( i = 0; i < xgrid; i ++ )
-                for ( j = 0; j < ygrid; j ++ ) {
+        mesh.position.x =   ( i - xgrid/2 ) * xsize;
+        mesh.position.y =   ( j - ygrid/2 ) * ysize;
+        mesh.position.z = 0;
 
-                    ox = i;
-                    oy = j;
+        mesh.scale.x = mesh.scale.y = mesh.scale.z = 1;
 
-                    geometry = new THREE.BoxBufferGeometry( xsize, ysize, xsize );
+        scene.add( mesh );
 
-                    change_uvs( geometry, ux, uy, ox, oy );
+        mesh.dx = 0.001 * ( 0.5 - Math.random() );
+        mesh.dy = 0.001 * ( 0.5 - Math.random() );
 
-                    materials[ cube_count ] = new THREE.MeshLambertMaterial( parameters );
+        meshes[ cube_count ] = mesh;
 
-                    material = materials[ cube_count ];
+        cube_count += 1;
 
-                    material.hue = i/xgrid;
-                    material.saturation = 1 - j/ygrid;
+    }
 
-                    material.color.setHSL( material.hue, material.saturation, 0.5 );
+    renderer.autoClear = false;
 
-                    mesh = new THREE.Mesh( geometry, material );
+    document.addEventListener( 'mousemove', onDocumentMouseMove, false );
 
-                    mesh.position.x =   ( i - xgrid/2 ) * xsize;
-                    mesh.position.y =   ( j - ygrid/2 ) * ysize;
-                    mesh.position.z = 0;
+    // postprocessing
 
-                    mesh.scale.x = mesh.scale.y = mesh.scale.z = 1;
+    var renderModel = new THREE.RenderPass( scene, camera );
+    var effectBloom = new THREE.BloomPass( 1.3 );
+    var effectCopy = new THREE.ShaderPass( THREE.CopyShader );
 
-                    scene.add( mesh );
+    effectCopy.renderToScreen = true;
 
-                    mesh.dx = 0.001 * ( 0.5 - Math.random() );
-                    mesh.dy = 0.001 * ( 0.5 - Math.random() );
+    composer = new THREE.EffectComposer( renderer );
 
-                    meshes[ cube_count ] = mesh;
+    composer.addPass( renderModel );
+    composer.addPass( effectBloom );
+    composer.addPass( effectCopy );
 
-                    cube_count += 1;
+    //
+    if ( navigator.mediaDevices && navigator.mediaDevices.getUserMedia ) {
 
-                }
+        var constraints = { video: { width: 1280, height: 720, facingMode: 'user' } };
 
-                renderer.autoClear = false;
+        navigator.mediaDevices.getUserMedia( constraints ).then( function( stream ) {
 
-                document.addEventListener( 'mousemove', onDocumentMouseMove, false );
+                // apply the stream to the video element used in the texture
 
-                // postprocessing
+                video.srcObject = stream;
+                video.play();
 
-                var renderModel = new THREE.RenderPass( scene, camera );
-                var effectBloom = new THREE.BloomPass( 1.3 );
-                var effectCopy = new THREE.ShaderPass( THREE.CopyShader );
+        } ).catch( function( error ) {
 
-                effectCopy.renderToScreen = true;
+            console.error( 'Unable to access the camera/webcam.', error );
 
-                composer = new THREE.EffectComposer( renderer );
+        } );
 
-                composer.addPass( renderModel );
-                composer.addPass( effectBloom );
-                composer.addPass( effectCopy );
+    } else {
 
-                //
+        console.error( 'MediaDevices interface not available.' );
 
-                window.addEventListener( 'resize', onWindowResize, false );
+    }
+    window.addEventListener( 'resize', onWindowResize, false );
 
-            }
+}
 
-            function onWindowResize() {
+function onWindowResize() {
 
-                windowHalfX = window.innerWidth / 2;
-                windowHalfY = window.innerHeight / 2;
+    windowHalfX = window.innerWidth / 2;
+    windowHalfY = window.innerHeight / 2;
 
-                camera.aspect = window.innerWidth / window.innerHeight;
-                camera.updateProjectionMatrix();
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
 
-                renderer.setSize( window.innerWidth, window.innerHeight );
-                composer.reset();
+    renderer.setSize( window.innerWidth, window.innerHeight );
+    composer.reset();
 
-            }
+}
 
-            function change_uvs( geometry, unitx, unity, offsetx, offsety ) {
+function change_uvs( geometry, unitx, unity, offsetx, offsety ) {
 
-                var uvs = geometry.attributes.uv.array;
+    var uvs = geometry.attributes.uv.array;
 
-                for ( var i = 0; i < uvs.length; i += 2 ) {
+    for ( var i = 0; i < uvs.length; i += 2 ) {
 
-                    uvs[ i ] = ( uvs[ i ] + offsetx ) * unitx;
-                    uvs[ i + 1 ] = ( uvs[ i + 1 ] + offsety ) * unity;
+        uvs[ i ] = ( uvs[ i ] + offsetx ) * unitx;
+        uvs[ i + 1 ] = ( uvs[ i + 1 ] + offsety ) * unity;
 
-                }
+    }
 
-            }
+}
 
 
-            function onDocumentMouseMove(event) {
+function onDocumentMouseMove(event) {
 
-                mouseX = ( event.clientX - windowHalfX );
-                mouseY = ( event.clientY - windowHalfY ) * 0.3;
+    mouseX = ( event.clientX - windowHalfX );
+    mouseY = ( event.clientY - windowHalfY ) * 0.3;
 
-            }
+}
 
-            //
+//
 
-            function animate() {
+function animate() {
 
-                requestAnimationFrame( animate );
+    requestAnimationFrame( animate );
 
-                render();
+    render();
 
-            }
+}
 
-            var h, counter = 1;
+var h, counter = 1;
 
-            function render() {
+function render() {
 
-                var time = Date.now() * 0.00005;
+    var time = Date.now() * 0.00005;
 
-                camera.position.x += ( mouseX - camera.position.x ) * 0.05;
-                camera.position.y += ( - mouseY - camera.position.y ) * 0.05;
+    camera.position.x += ( mouseX - camera.position.x ) * 0.05;
+    camera.position.y += ( - mouseY - camera.position.y ) * 0.05;
 
-                camera.lookAt( scene.position );
+    camera.lookAt( scene.position );
 
-                for ( var i = 0; i < cube_count; i ++ ) {
+    for ( var i = 0; i < cube_count; i ++ ) {
 
-                    material = materials[ i ];
+        material = materials[ i ];
 
-                    h = ( 360 * ( material.hue + time ) % 360 ) / 360;
-                    material.color.setHSL( h, material.saturation, 0.5 );
+        h = ( 360 * ( material.hue + time ) % 360 ) / 360;
+        material.color.setHSL( h, material.saturation, 0.5 );
 
-                }
+    }
 
-                if ( counter % 1000 > 200 ) {
+    if ( counter % 1000 > 200 ) {
 
-                    for ( var i = 0; i < cube_count; i ++ ) {
+        for ( var i = 0; i < cube_count; i ++ ) {
 
-                        mesh = meshes[ i ];
+            mesh = meshes[ i ];
 
-                        mesh.rotation.x += 10 * mesh.dx;
-                        mesh.rotation.y += 10 * mesh.dy;
+            mesh.rotation.x += 10 * mesh.dx;
+            mesh.rotation.y += 10 * mesh.dy;
 
-                        mesh.position.x += 200 * mesh.dx;
-                        mesh.position.y += 200 * mesh.dy;
-                        mesh.position.z += 400 * mesh.dx;
+            mesh.position.x += 200 * mesh.dx;
+            mesh.position.y += 200 * mesh.dy;
+            mesh.position.z += 400 * mesh.dx;
 
-                    }
+        }
 
-                }
+    }
 
-                if ( counter % 1000 === 0 ) {
+    if ( counter % 1000 === 0 ) {
 
-                    for ( var i = 0; i < cube_count; i ++ ) {
+        for ( var i = 0; i < cube_count; i ++ ) {
 
-                        mesh = meshes[ i ];
+            mesh = meshes[ i ];
 
-                        mesh.dx *= -1;
-                        mesh.dy *= -1;
+            mesh.dx *= -1;
+            mesh.dy *= -1;
 
-                    }
+        }
 
-                }
+    }
 
-                counter ++;
+    counter ++;
 
-                renderer.clear();
-                composer.render();
+    renderer.clear();
+    composer.render();
 
-            }
-
-
-        </script>
-
-    </body>
-</html>
+}
