@@ -42,7 +42,7 @@ from scipy.misc import imsave
 height = 512
 width = 512
 
-feature_layers = ['block1_conv2', 'block2_conv2', 'block3_conv3', 'block4_conv3', 'block5_conv3']
+feature_layers = [ 'block1_conv2', 'block2_conv2', 'block3_conv3', 'block4_conv3', 'block5_conv3']
 
 #feature_layers = ['block1_conv1', 'block1_conv2', 'block2_conv2','block3_conv1', 'block3_conv2', 'block4_conv1','block5_conv1']
 
@@ -57,10 +57,10 @@ def main():
     tests = 1
     content_weight = 0.050
     style_weight = 4.7
-    total_variation_weight = 1.0
-    playblocks = ['block4_conv2','block5_conv1','block4_conv2','block2_conv2']
-    content_weights = [0.021, 0.023, 0.025, 0.027, 0.029, 0.031, 0.029, 0.027, 0.025, 0.023, 0.021]
-    style_weights = [4.6, 4.8, 5.0, 5.2, 5.4]
+    total_variation_weight = 1.0 
+    playblocks = ['block4_conv2','block5_conv1','block3_conv1','block3_conv2','block4_conv1']
+    content_weights = [0.023, 0.025, 0.030, 0.035, 0.040, 0.045, 0.050, 0.055, 0.065, 0.070, 0.075]
+    style_weights = [5.8, 5.4, 5.0, 4.6, 4.2, 3.8]
     conv_blocks = ['block2_conv2','block5_conv1','block4_conv2']
     models = ["VGG16", "VGG19"]
 
@@ -77,7 +77,7 @@ def main():
             content_weight = content_weights[index%10]
             style_weight = style_weights[index%5]
             print (content_images[index%2])
-            styleTransfere(8, content_images[index%2], style_images[index%3], index+30, content_weight, style_weight, total_variation_weight, playblocks[index%3], models[index%2])
+            styleTransfere(8, content_images[index%2], style_images[index%3], index+30, content_weight, style_weight, total_variation_weight, playblocks[index%5], "VGG16")
 
 
 def getImagesPath(myPath): 

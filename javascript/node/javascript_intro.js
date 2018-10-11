@@ -86,7 +86,12 @@ myObject = {
             ],
             getDubbleSize: function(size) { return size * 2 } 
         }
+myObject.iteration = 1;
 
 // 8. Ta ut element ur objektet.
+
 console.log(myObject.planets[0].name); 
 console.log(myObject.getDubbleSize(myObject.planets[0].radius)); 
+console.log(myObject.iteration); 
+
+
