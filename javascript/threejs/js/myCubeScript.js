@@ -8,8 +8,8 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
 
 // skapa en kub och ett material till kub
-var geometry = new THREE.BoxGeometry(1, 1, 1);
-var material = new THREE.MeshBasicMaterial({
+var geometry = new THREE.BoxBufferGeometry( 3, 3, 3, 2, 2, 2);
+var material = new THREE.MeshNormalMaterial({
     color: 0x00ff00
 });
 // sammanfoga dessa i en mech som består av kuben och materialet
