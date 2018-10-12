@@ -9,8 +9,9 @@ function setup() {
 } 
 
 function draw() { 
+	ellipse(mouseX, mouseY, radiusVal, radiusVal);  
     displayText(mouseX, mouseY, radiusVal)
-    ellipse(mouseX, mouseY, radiusVal, radiusVal);  
+
 }
 
 function mouseMoved() {
