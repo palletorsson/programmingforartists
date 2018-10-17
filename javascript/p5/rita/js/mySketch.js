@@ -17,7 +17,7 @@ function draw() {
 
 function keyReleased() {      
   sentence = ""; 
-  for (var i=0, j = words.length; i<j; i++) {
+  for (var i=0; i < words.length; i++) {
         if (pos[i] == 'nn') {
             var lex = lexicon.randomWord(pos[i]); 
             sentence = sentence + " " + lex; 

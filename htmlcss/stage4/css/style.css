@@ -19,6 +19,7 @@ body {
     position: relative;
     text-align: center;
     width: 100%;
+
 }
 
 div.gallery-item {
@@ -46,6 +47,10 @@ div.description {
     padding: 10px;
 } 
 
+.about {
+    height: 200px;
+}
+
 a {
     color: black; 
     padding: 10px; 
@@ -55,8 +60,4 @@ a {
 
 a:hover {
     color: gray;   
-}
-
-.about {
-    height: 200px;
 }
