@@ -2,6 +2,17 @@ body {
     font-family: 'Roboto', sans-serif;     
 }
 
+a {
+    color: black; 
+    padding: 10px; 
+    font-size: 11px; 
+    text-transform: uppercase; 
+}
+
+a:hover {
+    color: gray;   
+}
+
 .container {
     margin-left: auto; 
     margin-right: auto; 
@@ -45,17 +56,6 @@ div.gallery-item img {
 div.description {
     padding: 10px;
 } 
-
-a {
-    color: black; 
-    padding: 10px; 
-    font-size: 11px; 
-    text-transform: uppercase; 
-}
-
-a:hover {
-    color: gray;   
-}
 
 .about {
     height: 200px;

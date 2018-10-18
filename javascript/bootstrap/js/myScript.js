@@ -293,8 +293,7 @@ var artworks = [
      },
    ];
 
-// from the edited html sellect list item and deltail item.
-
+// from the edited html select list item and detail item.
 var $galleryItem = $('.kopimi'); 
 var $singleItem = $('.singleItem'); 
 var $workelement = $galleryItem.clone();
