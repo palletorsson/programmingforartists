@@ -1,3 +1,67 @@
 body { 
     font-family: 'Roboto', sans-serif;     
 }
+
+/*  header styles */
+.center {
+    left: 0;
+    position: relative;
+    text-align: center;
+    width: 100%;
+}
+
+a {
+    color: black; 
+    padding: 10px; 
+    font-size: 11px; 
+    text-transform: uppercase; 
+}
+
+a:hover {
+    color: gray;   
+}
+
+/*  main styles */
+.container {
+    margin-left: auto; 
+    margin-right: auto; 
+    width:80%; 
+}
+
+.container:after {
+    content: ""; 
+    display: table;
+    clear: both;
+}
+
+div.gallery-item {
+    margin: 4px;
+    border: 1px solid pink;
+    width: 400px; 
+    float:left; 
+}
+
+div.gallery-item a {
+    padding: 0px; 
+}
+
+div.gallery-item:hover {
+    border: 1px solid black;
+}
+
+div.gallery-item img {
+    width: 100%;
+    height: auto;
+}
+
+.description {
+    padding: 10px;
+
+} 
+
+/*  footer styles */
+footer:after {
+  clear:both;
+}
+
+

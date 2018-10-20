@@ -18,35 +18,10 @@ body {
 }
 
 .container:after {
-    content: ""; 
+	content: "";
     display: table;
     clear: both;
 }
-
-div.gallery-item {
-    margin: 4px;
-    border: 1px solid pink;
-    width: 400px; 
-    float:left; 
-}
-
-div.gallery-item a {
-    padding: 0px; 
-}
-
-div.gallery-item:hover {
-    border: 1px solid black;
-}
-
-div.gallery-item img {
-    width: 100%;
-    height: auto;
-}
-
-.description {
-    padding: 10px;
-} 
-
 /*  footer styles */
 footer:after {
   clear:both;
