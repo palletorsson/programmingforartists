@@ -310,8 +310,8 @@ $( ".listworks" ).empty();
 // show all projects from json
 $.each( artworks, function( i, val ) {
   $('.text-target', workelement).html(val.art_title +": "+ val.art_descrip);
-	$('.target-img', workelement).attr('src', "./img/" +val.artwork_short + "/"+ val.artwork_short + "1.jpg"); 
-	$('.target-title', workelement).html(val.art_title); 
+  $('.target-img', workelement).attr('src', "./img/" +val.artwork_short + "/"+ val.artwork_short + "1.jpg"); 
+  $('.target-title', workelement).html(val.art_title); 
   $('.target-year', workelement).html(val.art_year); 
   $('.link-detail', workelement).attr("id", i); 
   if (val.art_show == true) {
