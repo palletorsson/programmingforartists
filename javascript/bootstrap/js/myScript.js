@@ -293,27 +293,33 @@ var artworks = [
      },
    ];
 
-// from the edited html select list item and detail item.
-var $galleryItem = $('.kopimi'); 
-var $singleItem = $('.singleItem'); 
-var $workelement = $galleryItem.clone();
+// from the edited html select list item.
+var galleryItem = $('.kopimi'); 
+var workelement = galleryItem.clone();
 var showVideo = false; 
+
+// sellect and hide a detail view 
+var singleItem = $('.singleItem'); 
+singleItem.hide(); 
+
 // hide and empty to rest the container 
-$singleItem.hide();  
 $( ".listworks" ).empty();
 
 // show all projects from json
 $.each( artworks, function( i, val ) {
-    $('.text-target', $workelement).html(val.art_title +": "+ val.art_descrip);
-	$('.target-img', $workelement).attr('src', "http://www.palletorsson.com/img/" +val.artwork_short + "/"+ val.artwork_short + "1.jpg"); 
-	$('.target-title', $workelement).html(val.art_title); 
-    $('.target-year', $workelement).html(val.art_year); 
-    $('.link-detail', $workelement).attr("id", i); 
-    if (val.art_show == true) {
-        $( ".listworks" ).append( $workelement.html() );
-    } 
+  $('.text-target', workelement).html(val.art_title +": "+ val.art_descrip);
+	$('.target-img', workelement).attr('src', "http://www.palletorsson.com/img/" +val.artwork_short + "/"+ val.artwork_short + "1.jpg"); 
+	$('.target-title', workelement).html(val.art_title); 
+  $('.target-year', workelement).html(val.art_year); 
+  $('.link-detail', workelement).attr("id", i); 
+  if (val.art_show == true) {
+    $( ".listworks" ).append( workelement.html() );
+  } 
 });
 	
+
+ 
+
 // first empty and then show all images belonging to a project, 
 // images lifes in folder /img/artwork_short/artwork_short+num.jpg - "artwork_short": "evil",
 // num is number of images - "art_imgs": 7,
@@ -327,15 +333,15 @@ $( ".link-detail" ).on( "click", function() {
 
   // show all images
   for(i=2; i < artworks[this.id].art_imgs; i++) {
-    $('.text-target', $workelement).html('');
-	$('.target-img', $workelement).attr('src', "./img/" +artworks[this.id].artwork_short + "/"+ artworks[this.id].artwork_short + i +".jpg"); 
-	$('.target-title', $workelement).html(artworks[this.id].art_title); 
-    $('.target-year', $workelement).html(artworks[this.id].art_year); 
-    $('.link-detail', $workelement).removeClass("link-detail").addClass("show-img");
-    $('.show-img', $workelement).attr('id', i); 
-    $('.show-img', $workelement).attr('data-work', this.id); 
-    $('.single-text', $singleItem).html(artworks[this.id].art_title + " - " + artworks[this.id].art_year); 
-    $( '.listworks' ).append( $workelement.html() );  
+    $('.text-target', workelement).html('');
+	  $('.target-img', workelement).attr('src', "./img/" +artworks[this.id].artwork_short + "/"+ artworks[this.id].artwork_short + i +".jpg"); 
+	  $('.target-title', workelement).html(artworks[this.id].art_title); 
+    $('.target-year', workelement).html(artworks[this.id].art_year); 
+    $('.link-detail', workelement).removeClass("link-detail").addClass("show-img");
+    $('.show-img', workelement).attr('id', i); 
+    $('.show-img', workelement).attr('data-work', this.id); 
+    $('.single-text', singleItem).html(artworks[this.id].art_title + " - " + artworks[this.id].art_year); 
+    $('.listworks').append( workelement.html() );  
   }
 
   if (artworks[this.id].art_video != 0) {
@@ -352,20 +358,20 @@ $( ".link-detail" ).on( "click", function() {
  $('.lead').html("<span> <a href='./index.html'>works</a> </span><span>/</span> <span><a  class='link-detail' id='"+this.id+"'>"+artworks[this.id].art_title+"</a></span>");
  $('.jumbotron-heading').text(artworks[this.id].art_maker); 
 
- // show a single
+ // show a single item
  $( ".show-img" ).on( "click", function() {
     $( ".video-content" ).hide();
     $( ".listworks" ).hide();
-    $('.single-image', $singleItem).attr('src', './img/' + showThis + '/'+ showThis + this.id +'.jpg');
-    $singleItem.show(); 
+    $('.single-image', singleItem).attr('src', './img/' + showThis + '/'+ showThis + this.id +'.jpg');
+    singleItem.show(); 
  });
 
 });
 
-// hide and show single images 
+// hide and show detailed images 
 $( ".single-image" ).on( "click", function() {
     $( ".listworks" ).show();
-    $singleItem.hide();
+    singleItem.hide();
     if (showVideo == true) { 
         $( ".video-content" ).show() 
     }
