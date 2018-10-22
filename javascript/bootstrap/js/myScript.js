@@ -336,8 +336,8 @@ $( ".link-detail" ).on( "click", function() {
   // show all images
   for(i=2; i < artworks[this.id].art_imgs; i++) {
     $('.text-target', workelement).html('');
-	  $('.target-img', workelement).attr('src', "./img/" +artworks[this.id].artwork_short + "/"+ artworks[this.id].artwork_short + i +".jpg"); 
-	  $('.target-title', workelement).html(artworks[this.id].art_title); 
+    $('.target-img', workelement).attr('src', "./img/" +artworks[this.id].artwork_short + "/"+ artworks[this.id].artwork_short + i +".jpg"); 
+    $('.target-title', workelement).html(artworks[this.id].art_title); 
     $('.target-year', workelement).html(artworks[this.id].art_year); 
     $('.link-detail', workelement).removeClass("link-detail").addClass("show-img");
     $('.show-img', workelement).attr('id', i); 
