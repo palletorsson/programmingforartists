@@ -1,0 +1,11 @@
+* För att dessa exempel skall fungera lokalt installera http-server.
+
+* I konsolen: 
+
+$ npm install -g http-server
+
+* För att köra http-server starta den i den folder du vill visa upp.
+
+* I konsolen: 
+
+$ http-server & 

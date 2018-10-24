@@ -1,0 +1,241 @@
+{
+  "items": [
+    {
+      "september": 8.002, 
+      "label": 1, 
+      "march": 16.846, 
+      "year": 1979
+    }, 
+    {
+      "september": 8.75, 
+      "label": 2, 
+      "march": 16.512, 
+      "year": 1980
+    }, 
+    {
+      "september": 8.173, 
+      "label": 3, 
+      "march": 16.14, 
+      "year": 1981
+    }, 
+    {
+      "september": 8.251, 
+      "label": 4, 
+      "march": 16.531, 
+      "year": 1982
+    }, 
+    {
+      "september": 8.455, 
+      "label": 5, 
+      "march": 16.525, 
+      "year": 1983
+    }, 
+    {
+      "september": 7.88, 
+      "label": 6, 
+      "march": 15.981, 
+      "year": 1984
+    }, 
+    {
+      "september": 7.799, 
+      "label": 7, 
+      "march": 16.315, 
+      "year": 1985
+    }, 
+    {
+      "september": 8.148, 
+      "label": 8, 
+      "march": 16.298, 
+      "year": 1986
+    }, 
+    {
+      "september": 8.146, 
+      "label": 9, 
+      "march": 16.174, 
+      "year": 1987
+    }, 
+    {
+      "september": 8.155, 
+      "label": 10, 
+      "march": 16.348, 
+      "year": 1988
+    }, 
+    {
+      "september": 7.749, 
+      "label": 11, 
+      "march": 15.856, 
+      "year": 1989
+    }, 
+    {
+      "september": 6.943, 
+      "label": 12, 
+      "march": 16.336, 
+      "year": 1990
+    }, 
+    {
+      "september": 7.241, 
+      "label": 13, 
+      "march": 15.804, 
+      "year": 1991
+    }, 
+    {
+      "september": 8.241, 
+      "label": 14, 
+      "march": 16.038, 
+      "year": 1992
+    }, 
+    {
+      "september": 7.323, 
+      "label": 15, 
+      "march": 16.224, 
+      "year": 1993
+    }, 
+    {
+      "september": 8.023, 
+      "label": 16, 
+      "march": 15.969, 
+      "year": 1994
+    }, 
+    {
+      "september": 6.817, 
+      "label": 17, 
+      "march": 15.655, 
+      "year": 1995
+    }, 
+    {
+      "september": 8.417, 
+      "label": 18, 
+      "march": 15.531, 
+      "year": 1996
+    }, 
+    {
+      "september": 7.416, 
+      "label": 19, 
+      "march": 15.897, 
+      "year": 1997
+    }, 
+    {
+      "september": 7.497, 
+      "label": 20, 
+      "march": 16.023, 
+      "year": 1998
+    }, 
+    {
+      "september": 7.184, 
+      "label": 21, 
+      "march": 15.71, 
+      "year": 1999
+    }, 
+    {
+      "september": 7.281, 
+      "label": 22, 
+      "march": 15.638, 
+      "year": 2000
+    }, 
+    {
+      "september": 7.593, 
+      "label": 23, 
+      "march": 15.848, 
+      "year": 2001
+    }, 
+    {
+      "september": 6.595, 
+      "label": 24, 
+      "march": 15.753, 
+      "year": 2002
+    }, 
+    {
+      "september": 6.894, 
+      "label": 25, 
+      "march": 15.841, 
+      "year": 2003
+    }, 
+    {
+      "september": 6.636, 
+      "label": 26, 
+      "march": 15.31, 
+      "year": 2004
+    }, 
+    {
+      "september": 6.187, 
+      "label": 27, 
+      "march": 15.036, 
+      "year": 2005
+    }, 
+    {
+      "september": 6.563, 
+      "label": 28, 
+      "march": 14.767, 
+      "year": 2006
+    }, 
+    {
+      "september": 4.962, 
+      "label": 29, 
+      "march": 14.913, 
+      "year": 2007
+    }, 
+    {
+      "september": 5.39, 
+      "label": 30, 
+      "march": 15.436, 
+      "year": 2008
+    }, 
+    {
+      "september": 5.893, 
+      "label": 31, 
+      "march": 15.258, 
+      "year": 2009
+    }, 
+    {
+      "september": 5.605, 
+      "label": 32, 
+      "march": 15.425, 
+      "year": 2010
+    }, 
+    {
+      "september": 5.173, 
+      "label": 33, 
+      "march": 14.876, 
+      "year": 2011
+    }, 
+    {
+      "september": 4.146, 
+      "label": 34, 
+      "march": 15.471, 
+      "year": 2012
+    }, 
+    {
+      "september": 6.163, 
+      "label": 35, 
+      "march": 15.432, 
+      "year": 2013
+    }, 
+    {
+      "september": 6.303, 
+      "label": 36, 
+      "march": 15.333, 
+      "year": 2014
+    }, 
+    {
+      "september": 5.777, 
+      "label": 37, 
+      "march": 14.899, 
+      "year": 2015
+    }, 
+    {
+      "september": 5.777, 
+      "label": 38, 
+      "march": 14.987, 
+      "year": 2016
+    }
+  ], 
+  "properties":{
+    "year": {"valueType": "number", "columnType": "year", "order": 0, "label": "Year"},
+    "march": {"valueType": "number", "columnType": "number", "order": 1, "label": "March"},
+    "january": {"valueType": "number", "columnType": "number", "order": 1, "label": "January"},
+    "february": {"valueType": "number", "columnType": "number", "order": 2, "label": "February"},
+    "september": {"valueType": "number", "columnType": "number", "order": 2, "label": "September"},
+    "mar_trend": {"valueType": "number", "columnType": "number", "order": 5, "label": "March trend"},
+    "sep_trend": {"valueType": "number", "columnType": "number", "order": 6, "label": "September trend"}
+  }
+}

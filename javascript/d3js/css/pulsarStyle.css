@@ -1,0 +1,31 @@
+
+body {
+  background-color: black; 
+
+}
+svg {
+  font: 12px sans-serif;
+}
+.wave {
+  fill: black;
+  stroke: #fff;
+  stroke-width: 2;
+}
+.freq,
+.title {
+  font-size: 16px;
+  fill: #444;
+}
+.freq {
+  text-anchor: end;
+}
+.axis path,
+.axis line {
+  stroke: #444;
+  stroke-width: .75;
+  fill: none;
+}
+.axis text {
+  fill: #444;
+  text-anchor: middle;
+}

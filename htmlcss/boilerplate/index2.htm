@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html> <!-- här börjar html -->
+  <head>  
+    <title> Jag är titeln på en enkel sida </title>
+    <script src="https://d3js.org/d3-array.v1.min.js"></script>
+<script src="https://d3js.org/d3-path.v1.min.js"></script>
+<script src="https://d3js.org/d3-chord.v1.min.js"></script>
+<script>
+
+  chart = {
+  const svg = d3.select(DOM.svg(width, height));
+
+  const serie = svg.append("g")
+    .selectAll("g")
+    .data(data)
+    .enter().append("g")
+      .attr("transform", (d, i) => `translate(0,${y(i) + 1})`);
+  
+  serie.append("path")
+      .attr("fill", "#fff")
+      .attr("d", area);
+  
+  serie.append("path")
+      .attr("fill", "none")
+      .attr("stroke", "black")
+      .attr("d", line);
+
+  svg.append("g")
+      .call(xAxis);
+  
+  return svg.node();
+}
+
+data = d3.text("https://gist.githubusercontent.com/borgar/31c1e476b8e92a11d7e9/raw/0fae97dab6830ecee185a63c1cee0008f6778ff6/pulsar.csv").then(data => d3.csvParseRows(data, row => row.map(Number)))
+
+</script>
+  </head>
+  <body>  <!-- det som sidan visar -->
+
+  </body>
+  <!-- här skall vi länka in vårt javascript -->
+</html> 

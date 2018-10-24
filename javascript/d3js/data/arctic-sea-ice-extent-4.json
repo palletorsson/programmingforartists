@@ -1,0 +1,1423 @@
+{
+  "head": {
+    "vars": [
+      "year", 
+      "january", 
+      "march", 
+      "february", 
+      "september", 
+      "mar_trend", 
+      "sep_trend"
+    ]
+  }, 
+  "results": {
+    "bindings": [
+      {
+        "february": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "march": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": 16.846
+        }, 
+        "september": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": 8.002
+        }, 
+        "january": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "sep_trend": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "mar_trend": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "year": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": 1979
+        }
+      }, 
+      {
+        "february": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "march": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": 16.512
+        }, 
+        "september": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": 8.75
+        }, 
+        "january": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "sep_trend": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "mar_trend": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "year": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": 1980
+        }
+      }, 
+      {
+        "february": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "march": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": 16.14
+        }, 
+        "september": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": 8.173
+        }, 
+        "january": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "sep_trend": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "mar_trend": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "year": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": 1981
+        }
+      }, 
+      {
+        "february": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "march": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": 16.531
+        }, 
+        "september": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": 8.251
+        }, 
+        "january": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "sep_trend": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "mar_trend": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "year": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": 1982
+        }
+      }, 
+      {
+        "february": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "march": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": 16.525
+        }, 
+        "september": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": 8.455
+        }, 
+        "january": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "sep_trend": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "mar_trend": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "year": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": 1983
+        }
+      }, 
+      {
+        "february": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "march": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": 15.981
+        }, 
+        "september": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": 7.88
+        }, 
+        "january": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "sep_trend": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "mar_trend": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "year": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": 1984
+        }
+      }, 
+      {
+        "february": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "march": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": 16.315
+        }, 
+        "september": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": 7.799
+        }, 
+        "january": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "sep_trend": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "mar_trend": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "year": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": 1985
+        }
+      }, 
+      {
+        "february": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "march": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": 16.298
+        }, 
+        "september": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": 8.148
+        }, 
+        "january": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "sep_trend": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "mar_trend": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "year": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": 1986
+        }
+      }, 
+      {
+        "february": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "march": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": 16.174
+        }, 
+        "september": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": 8.146
+        }, 
+        "january": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "sep_trend": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "mar_trend": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "year": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": 1987
+        }
+      }, 
+      {
+        "february": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "march": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": 16.348
+        }, 
+        "september": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": 8.155
+        }, 
+        "january": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "sep_trend": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "mar_trend": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "year": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": 1988
+        }
+      }, 
+      {
+        "february": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "march": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": 15.856
+        }, 
+        "september": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": 7.749
+        }, 
+        "january": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "sep_trend": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "mar_trend": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "year": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": 1989
+        }
+      }, 
+      {
+        "february": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "march": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": 16.336
+        }, 
+        "september": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": 6.943
+        }, 
+        "january": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "sep_trend": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "mar_trend": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "year": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": 1990
+        }
+      }, 
+      {
+        "february": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "march": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": 15.804
+        }, 
+        "september": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": 7.241
+        }, 
+        "january": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "sep_trend": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "mar_trend": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "year": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": 1991
+        }
+      }, 
+      {
+        "february": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "march": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": 16.038
+        }, 
+        "september": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": 8.241
+        }, 
+        "january": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "sep_trend": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "mar_trend": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "year": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": 1992
+        }
+      }, 
+      {
+        "february": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "march": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": 16.224
+        }, 
+        "september": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": 7.323
+        }, 
+        "january": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "sep_trend": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "mar_trend": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "year": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": 1993
+        }
+      }, 
+      {
+        "february": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "march": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": 15.969
+        }, 
+        "september": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": 8.023
+        }, 
+        "january": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "sep_trend": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "mar_trend": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "year": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": 1994
+        }
+      }, 
+      {
+        "february": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "march": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": 15.655
+        }, 
+        "september": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": 6.817
+        }, 
+        "january": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "sep_trend": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "mar_trend": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "year": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": 1995
+        }
+      }, 
+      {
+        "february": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "march": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": 15.531
+        }, 
+        "september": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": 8.417
+        }, 
+        "january": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "sep_trend": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "mar_trend": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "year": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": 1996
+        }
+      }, 
+      {
+        "february": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "march": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": 15.897
+        }, 
+        "september": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": 7.416
+        }, 
+        "january": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "sep_trend": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "mar_trend": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "year": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": 1997
+        }
+      }, 
+      {
+        "february": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "march": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": 16.023
+        }, 
+        "september": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": 7.497
+        }, 
+        "january": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "sep_trend": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "mar_trend": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "year": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": 1998
+        }
+      }, 
+      {
+        "february": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "march": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": 15.71
+        }, 
+        "september": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": 7.184
+        }, 
+        "january": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "sep_trend": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "mar_trend": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "year": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": 1999
+        }
+      }, 
+      {
+        "february": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "march": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": 15.638
+        }, 
+        "september": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": 7.281
+        }, 
+        "january": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "sep_trend": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "mar_trend": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "year": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": 2000
+        }
+      }, 
+      {
+        "february": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "march": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": 15.848
+        }, 
+        "september": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": 7.593
+        }, 
+        "january": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "sep_trend": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "mar_trend": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "year": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": 2001
+        }
+      }, 
+      {
+        "february": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "march": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": 15.753
+        }, 
+        "september": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": 6.595
+        }, 
+        "january": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "sep_trend": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "mar_trend": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "year": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": 2002
+        }
+      }, 
+      {
+        "february": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "march": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": 15.841
+        }, 
+        "september": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": 6.894
+        }, 
+        "january": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "sep_trend": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "mar_trend": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "year": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": 2003
+        }
+      }, 
+      {
+        "february": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "march": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": 15.31
+        }, 
+        "september": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": 6.636
+        }, 
+        "january": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "sep_trend": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "mar_trend": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "year": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": 2004
+        }
+      }, 
+      {
+        "february": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "march": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": 15.036
+        }, 
+        "september": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": 6.187
+        }, 
+        "january": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "sep_trend": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "mar_trend": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "year": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": 2005
+        }
+      }, 
+      {
+        "february": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "march": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": 14.767
+        }, 
+        "september": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": 6.563
+        }, 
+        "january": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "sep_trend": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "mar_trend": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "year": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": 2006
+        }
+      }, 
+      {
+        "february": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "march": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": 14.913
+        }, 
+        "september": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": 4.962
+        }, 
+        "january": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "sep_trend": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "mar_trend": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "year": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": 2007
+        }
+      }, 
+      {
+        "february": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "march": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": 15.436
+        }, 
+        "september": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": 5.39
+        }, 
+        "january": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "sep_trend": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "mar_trend": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "year": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": 2008
+        }
+      }, 
+      {
+        "february": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "march": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": 15.258
+        }, 
+        "september": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": 5.893
+        }, 
+        "january": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "sep_trend": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "mar_trend": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "year": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": 2009
+        }
+      }, 
+      {
+        "february": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "march": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": 15.425
+        }, 
+        "september": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": 5.605
+        }, 
+        "january": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "sep_trend": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "mar_trend": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "year": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": 2010
+        }
+      }, 
+      {
+        "february": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "march": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": 14.876
+        }, 
+        "september": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": 5.173
+        }, 
+        "january": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "sep_trend": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "mar_trend": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "year": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": 2011
+        }
+      }, 
+      {
+        "february": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "march": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": 15.471
+        }, 
+        "september": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": 4.146
+        }, 
+        "january": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "sep_trend": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "mar_trend": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "year": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": 2012
+        }
+      }, 
+      {
+        "february": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "march": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": 15.432
+        }, 
+        "september": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": 6.163
+        }, 
+        "january": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "sep_trend": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "mar_trend": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "year": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": 2013
+        }
+      }, 
+      {
+        "february": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "march": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": 15.333
+        }, 
+        "september": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": 6.303
+        }, 
+        "january": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "sep_trend": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "mar_trend": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "year": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": 2014
+        }
+      }, 
+      {
+        "february": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "march": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": 14.899
+        }, 
+        "september": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": 5.777
+        }, 
+        "january": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "sep_trend": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "mar_trend": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "year": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": 2015
+        }
+      }, 
+      {
+        "february": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "march": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": 14.987
+        }, 
+        "september": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": 5.777
+        }, 
+        "january": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "sep_trend": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "mar_trend": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": null
+        }, 
+        "year": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#double", 
+          "type": "typed-literal", 
+          "value": 2016
+        }
+      }
+    ]
+  }
+}
