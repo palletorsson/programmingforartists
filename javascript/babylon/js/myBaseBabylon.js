@@ -2,9 +2,8 @@ var canvas = document.getElementById("renderCanvas"); // Get the canvas element
 var engine = new BABYLON.Engine(canvas, true); // Generate the BABYLON 3D engine
 
 /******* Add the create scene function ******/
-var createScene = function () {
- // Edit : enter code form playgroud here 
-};
+
+
 /******* End of the create scene function ******/    
 
 var scene = createScene(); //Call the createScene function
