@@ -39,7 +39,7 @@
 				var globalPlane = new THREE.Plane( new THREE.Vector3( -1, -1, -1), 0.1 );
 				// Geometry
 				var material = new THREE.MeshPhongMaterial( {
-						color: 0xffffff,
+						color: 0xffffff	,
 						shininess: 10000,
 						side: THREE.DoubleSide,
 						// ***** Clipping setup (material): *****
