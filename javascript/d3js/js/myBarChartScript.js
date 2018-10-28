@@ -1,4 +1,3 @@
-
 d3.json('../data/stockholm.json').then(function(d) {
 
   var temperatures = [],
@@ -21,16 +20,17 @@ d3.json('../data/stockholm.json').then(function(d) {
         myChart;
 
   var d = d.dailyForecasts.forecastLocation.forecast; 
-
+  // fallback, använd random 
   for (var i = 0; i<d.length; i++) {
     temperatures.push(d[i].highTemperature);
     dates.push(d[i].utcTime);
   }
 
   var tMax = d3.max(temperatures); 
+  console.log(tMax);
 
   yScale = d3.scaleLinear()
-    .domain([0, tMax])
+    .domain([0, tMax]) // 
     .range([0,height]);
 
   yAxisValues = d3.scaleLinear()
