@@ -1,6 +1,14 @@
+
 // skapa en scen, en kamera och en renderare
 var scene = new THREE.Scene();
-var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+scene.fog = new THREE.FogExp2(0x00ff00, 0.1); 
+
+var camera = new THREE.PerspectiveCamera(
+	75, // fov 
+	window.innerWidth / window.innerHeight, //aspect
+	0.1, // near
+	1000); // far
+
 var renderer = new THREE.WebGLRenderer();
 
 // scala bilden till window-size och lägg till allt till dom:en
@@ -8,18 +16,32 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
 
 // skapa en kub och ett material till kub
-var geometry = new THREE.BoxBufferGeometry( 3, 3, 3, 2, 2, 2);
-var material = new THREE.MeshNormalMaterial({
-    color: 0x00ff00
-});
+
+var geometry = new THREE.BoxGeometry(3, 3, 3);
+
+var material = new THREE.MeshBasicMaterial({
+		color: 0xff00ff,
+	});
+
+var material = new THREE.MeshNormalMaterial();
+
 // sammanfoga dessa i en mech som består av kuben och materialet
 var cube = new THREE.Mesh(geometry, material);
 
 // lägg till kuben till scenen
 scene.add(cube);
 
-// sätt kamerans position 
-camera.position.z = 5;
+var plane = getPlane(40); 
+plane.rotation.x = Math.PI/2;
+plane.position.y = -3; 
+scene.add(plane);
+
+// sätt kamerans position så vi kan se boxen
+	camera.position.x = 1;
+	camera.position.y = 2;
+	camera.position.z = 10;
+
+	camera.lookAt(new THREE.Vector3(0, 0, 0));
 
 // rotera kuben och rendera scenen 
 var animate = function () {
@@ -30,3 +52,18 @@ var animate = function () {
 };
 // starta animationen 
 animate();
+
+
+function getPlane(size) {
+	var geometry = new THREE.PlaneGeometry(size, size);
+	var material = new THREE.MeshBasicMaterial({
+		color: 0xffff00,
+		side: THREE.DoubleSide
+	});
+	var mesh = new THREE.Mesh(
+		geometry,
+		material 
+	);
+
+	return mesh;
+}

@@ -1,0 +1,14 @@
+.anim {
+     background-color: green;
+}
+
+.space1 {
+    margin-bottom: 30px; 
+    padding: 4px; 
+    border: 5px solid red; 
+}
+
+.space {
+    margin-bottom: 100px; 
+    border: 1px solid red; 
+}
