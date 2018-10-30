@@ -24,7 +24,11 @@ var material = new THREE.MeshBasicMaterial({
 	});
 
 var material = new THREE.MeshNormalMaterial();
-
+var textureLoader = new THREE.TextureLoader();
+var texture1 = textureLoader.load( "./data/cell-grid.jpg" );
+var material = new THREE.MeshBasicMaterial( {
+								map: texture1,								
+							});
 // sammanfoga dessa i en mech som består av kuben och materialet
 var cube = new THREE.Mesh(geometry, material);
 
@@ -37,11 +41,8 @@ plane.position.y = -3;
 scene.add(plane);
 
 // sätt kamerans position så vi kan se boxen
-	camera.position.x = 1;
-	camera.position.y = 2;
-	camera.position.z = 10;
+camera.position.z = 10;
 
-	camera.lookAt(new THREE.Vector3(0, 0, 0));
 
 // rotera kuben och rendera scenen 
 var animate = function () {

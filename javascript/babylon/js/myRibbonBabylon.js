@@ -32,7 +32,7 @@ var createScene = function (engine) {
     ];
 
     // initial vars
-    var delay = 10; //  60,000 / 120 bpm = 500ms
+    var delay = 500; //  60,000 / 120 bpm = 500ms
     var steps = Math.floor(delay / 80);;
 
     var paths = [];

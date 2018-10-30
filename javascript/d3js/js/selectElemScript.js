@@ -1,13 +1,17 @@
-var showAnim = 1; 
+var showAnim = 2; 
 
 if (showAnim == 1) {
   d3.selectAll("p")
-    .data([8, 16, 32, 64, 128])
+    .data([8, 16, 32, 16, 8, 56])
     .text(function(d) { return d; })
     .style("font-size", function(d) { return d*2 + "px"; });
 }
 
 if (showAnim == 2) {
+  d3.selectAll("p")
+    .remove();
+    d3.selectAll("svg")
+    .remove();  
   d3.select("#vis")
     .style("text-align", "center")
     .data([0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597, 2584, 4181, 6765, 10946, 17711, 28657, 46368, 75025, 121393, 196418, 317811, 514229, 832040, 1346269, 2178309, 3524578, 5702887, 9227465, 14930352, 24157817, 39088169])
