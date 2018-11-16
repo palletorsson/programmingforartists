@@ -1,0 +1,11 @@
+/Users/pato/Documents/csharp/AnimalKingdom/AnimalKingdom/bin/Debug/netcoreapp2.1/AnimalKingdom.deps.json
+/Users/pato/Documents/csharp/AnimalKingdom/AnimalKingdom/bin/Debug/netcoreapp2.1/AnimalKingdom.runtimeconfig.json
+/Users/pato/Documents/csharp/AnimalKingdom/AnimalKingdom/bin/Debug/netcoreapp2.1/AnimalKingdom.runtimeconfig.dev.json
+/Users/pato/Documents/csharp/AnimalKingdom/AnimalKingdom/bin/Debug/netcoreapp2.1/AnimalKingdom.dll
+/Users/pato/Documents/csharp/AnimalKingdom/AnimalKingdom/bin/Debug/netcoreapp2.1/AnimalKingdom.pdb
+/Users/pato/Documents/csharp/AnimalKingdom/AnimalKingdom/obj/Debug/netcoreapp2.1/AnimalKingdom.csprojAssemblyReference.cache
+/Users/pato/Documents/csharp/AnimalKingdom/AnimalKingdom/obj/Debug/netcoreapp2.1/AnimalKingdom.csproj.CoreCompileInputs.cache
+/Users/pato/Documents/csharp/AnimalKingdom/AnimalKingdom/obj/Debug/netcoreapp2.1/AnimalKingdom.AssemblyInfoInputs.cache
+/Users/pato/Documents/csharp/AnimalKingdom/AnimalKingdom/obj/Debug/netcoreapp2.1/AnimalKingdom.AssemblyInfo.cs
+/Users/pato/Documents/csharp/AnimalKingdom/AnimalKingdom/obj/Debug/netcoreapp2.1/AnimalKingdom.dll
+/Users/pato/Documents/csharp/AnimalKingdom/AnimalKingdom/obj/Debug/netcoreapp2.1/AnimalKingdom.pdb

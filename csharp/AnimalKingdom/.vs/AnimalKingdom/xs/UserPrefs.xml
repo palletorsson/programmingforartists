@@ -1,0 +1,18 @@
+﻿<Properties StartupConfiguration="{A02549E9-81BC-42E5-8D14-1BFC50EC22ED}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="AnimalKingdom/Animals/Cat.cs">
+    <Files>
+      <File FileName="AnimalKingdom/Program.cs" Line="12" Column="28" />
+      <File FileName="AnimalKingdom/Animals/Animal.cs" Line="26" Column="10" />
+      <File FileName="AnimalKingdom/Animals/Cat.cs" Line="13" Column="10" />
+      <File FileName="AnimalKingdom/Animals/EmptyInterface.cs" Line="12" Column="1" />
+      <File FileName="AnimalKingdom/Dog.cs" Line="12" Column="27" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.AnimalKingdom PreferredExecutionTarget="MonoDevelop.Default" />
+</Properties>

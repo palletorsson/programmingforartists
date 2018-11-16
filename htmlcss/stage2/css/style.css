@@ -11,14 +11,15 @@ body {
 }
 
 a {
-    color: black; 
+    color: #4b2257; 
     padding: 10px; 
     font-size: 11px; 
     text-transform: uppercase; 
 }
 
 a:hover {
-    color: gray;   
+    color: gray;
+    padding: 40px;   
 }
 
 /*  main styles */
@@ -62,6 +63,7 @@ div.gallery-item img {
 /*  footer styles */
 footer:after {
   clear:both;
+  content: "hej";
 }
 
 

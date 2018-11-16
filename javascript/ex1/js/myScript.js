@@ -1,17 +1,18 @@
-$('.button').click(function() {
-    // 
-    var num = $('.count').text()
-    // c = 1
-    var number = addNumber(num) 
-    // number is 2
-    $('.count').text(number);
-    var elem  = $( this ); // 
-    var onoff = elem.text();
-    
-    changeElem(onoff, elem); 
-    changeElem(onoff, elem); 
-
-}); 
+$('.button').click( 
+    function() {
+        // 
+        var num = $('.count').text()
+        // c = 1
+        var number = addNumber(num) 
+        // number is 2
+        $('.count').text(number);
+        var elem  = $( this ); 
+        var onoff = elem.text();
+        
+        changeElem(onoff, elem); 
+      
+    }
+); 
 
 function addNumber(num) {
     // konvertera till nummer
@@ -22,6 +23,7 @@ function addNumber(num) {
     return res; 
   
 } 
+
 function changeElem(onoff, elem) {
     console.log(onoff)
     if ( onoff == 'off') {
