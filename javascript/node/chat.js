@@ -4,7 +4,7 @@ var fs = require('fs');
 var markov = require('markov');
 var m = markov(1);
 
-var s = fs.createReadStream(__dirname + '/yayfiles.txt');
+var s = fs.createReadStream(__dirname + 'yayfiles.txt');
 console.log(s); 
 m.seed(s, function () {
     var stdin = process.openStdin();

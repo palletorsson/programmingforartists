@@ -1,0 +1,44 @@
+// skapa en text, int, float variabler 
+string hello = "hello";
+
+// använd print 
+
+// scope public private är default
+// se i editorn
+// drag för att ändra nummer
+
+public string world = "world";
+public bool gameOver = false;
+
+
+// skapa en funktion
+
+// ändra värdet i start
+
+// ändra värdet i update
+
+// skapa en funktion som returnerar värd
+
+// skapa en function med argument 
+
+// data struktuerer
+// array ändra i editorn - träd
+
+// skapa en List - dynamisk - blommor
+// import, add, remove, 
+
+// dicts
+
+// heath 0 player dead
+
+// shorthand
+
+// for loop och foreach
+
+
+// skapa new class
+
+
+// custum class
+
+// refactor

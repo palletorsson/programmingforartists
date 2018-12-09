@@ -3,8 +3,8 @@ import time
 
 mySecret = 'tUGaHnB7NJuScEEAjLAleIHf0A8'
 myId = 'ItkweWHT3XQJoA'
-myUser = 'palle_torsson'
-myPass = '----------'
+myUser = '----------' # make your own
+myPass = '----------' # make your own
 myAgent = 'yay'
 yayId = 'day4i'
 fullText = ''
