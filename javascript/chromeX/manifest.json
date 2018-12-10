@@ -1,0 +1,18 @@
+{
+	"manifest_version": 2,
+	"name": "Nyliberärt",
+	"version": "0.1",
+	"description": "Nyliberärt lexion",
+	"icons": { "16": "images/x16.png",
+           "48": "images/x48.png",
+          "128": "images/x128.png" },
+	"content_scripts": 
+	[
+		{
+			"matches": ["*://*/*"], 
+			"js": ["thirdParty/jquery.js","myscript.js"],
+			"css": ["css/style.css"],
+			"run_at": "document_end"  
+		}
+	]
+}
