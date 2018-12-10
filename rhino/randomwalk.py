@@ -19,18 +19,6 @@ def setOrigin():
     ptOrigin = [x,y,z]
     return ptOrigin
 
-ptCurrent = setOrigin() 
-
-bound = 10
-
-pts = []
-xPoints = []
-yPoints = []
-pts.append(ptCurrent)
-xPoints.append(ptCurrent[0])
-yPoints.append(ptCurrent[1])
-circleZero = rs.AddSphere(ptCurrent,1.0)
-strands = 10
 
 def runSequence1(): 
     ptCurrent = setOrigin() 
@@ -55,28 +43,15 @@ def runSequence1():
             rs.AddSphere(newPt,2.0)
             pts.append(ptCurrent)
 
-
-def runSequence2(): 
+for x in range(1,5):
     ptCurrent = setOrigin() 
-    for i in pts:
-        thispt = rs.AddPoint((pts[i]))
-        addNewPoint = False 
-        xPoint = getPoint(ptCurrent[0], xPoints)
-        
-        if xPoint != 'next': 
-            ptCurrent[0] = xPoint
-            xPoints.append(ptCurrent[0])
-            addNewPoint = True
-        
-        yPoint = getPoint(ptCurrent[1], yPoints)
-        if yPoint != 'next': 
-            ptCurrent[1] = yPoint
-            yPoints.append(ptCurrent[1])
-            addNewPoint = True    
-    
-        if (addNewPoint):
-            newPt = rs.MoveObject(oldpt, ptCurrent)
-            rs.AddSphere(newPt,2.0)
-            #pts.append(ptCurrent)
-runSequence1()
-print pts
+    bound = 10
+    pts = []
+    xPoints = []
+    yPoints = []
+    pts.append(ptCurrent)
+    xPoints.append(ptCurrent[0])
+    yPoints.append(ptCurrent[1])
+    circleZero = rs.AddSphere(ptCurrent,1.0)
+    strands = 10
+    runSequence1()
