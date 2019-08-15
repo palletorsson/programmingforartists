@@ -1,4 +1,21 @@
 .work-detail-target {
-   max-height: 50%; 
+   max-height: 50%;
 
+}
+
+/* The Image container */
+.img-hover-zoom {
+  height: 300px; /* Modify this according to your need */
+  overflow: hidden; /* Removing this will break the effects */
+}
+/*https://w3bits.com/css-image-hover-zoom/ */
+/* Point-zoom Container */
+.img-hover-zoom--point-zoom img {
+  transform-origin: 65% 75%;
+  transition: transform 12s, filter 2s ease-out;
+}
+
+/* The Transformation */
+.img-hover-zoom--point-zoom:hover img {
+  transform: scale(5);
 }

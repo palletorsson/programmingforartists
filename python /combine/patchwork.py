@@ -4,33 +4,54 @@ from os import listdir
 from os.path import isfile, join
 
 def main():
-    columns = 16
+    smalnum = 0;
+    columns = 8
     y_offset = 8
-    x_offset = 8 
-    count = 0
-    resized = 180 
+    x_offset = 8
+    count = 0;
+    fromNumber = 0
+    toNumber = 16
+    base = 16
+    resized = 256
     padding = 10
     myPath = "./img/"
     filewithpath = getImagesPath(myPath)
-    images = map(Image.open, filewithpath)
-    widths, heights = zip(*(i.size for i in images))
-    total_width = getTotalWidth(images, resized, padding)
-    max_height = getMaxHeight(heights, total_width, columns, padding)
 
-    new_im = Image.new('RGB', (total_width, max_height))
+    if smalnum == 1:
+        images = map(Image.open, filewithpath)
+        widths, heights = (8 + 128) * 8
+        total_width = getTotalWidth(images, resized, padding)
+        max_height = getMaxHeight(heights, total_width, columns, padding)
 
-    for im in images:
-        im = im.resize((resized, resized ), Image.ANTIALIAS)
-        new_im.paste(im, (x_offset, y_offset))
-        x_offset += im.size[0]+padding
-        count = count + 1
-        if count % columns == 0:
-            x_offset = padding 
-            y_offset += resized + padding
+    else:
+        fileLength = len(filewithpath)/16
+        print fileLength
+        for n in range(fileLength):
+            images = map(Image.open, filewithpath[fromNumber:toNumber])
+            new_im = Image.new('RGB', (256+32, (256*17+32)))
+            for im in images:
 
-    new_im.save('test.jpg')
+                #im = im.resize((resized, resized), Image.ANTIALIAS)
+                new_im.paste(im, (16, x_offset))
+                x_offset += 256+16
 
-def getImagesPath(myPath): 
+            new_im.save("./vertical/"+str(toNumber)+'.jpg')
+            x_offset = 8
+            fromNumber = fromNumber + base
+            toNumber = toNumber + base
+            print fromNumber, toNumber
+        filewithpath = getImagesPath("./vertical/")
+        fileLength = len(filewithpath)
+        images = map(Image.open, filewithpath)
+        new_im = Image.new('RGB', ((256+32)*fileLength, 256*17+32))
+        for im in images:
+            new_im.paste(im, (x_offset, 0))
+            x_offset += 256+16
+        new_im.save("final.jpg")
+
+
+
+def getImagesPath(myPath):
 	# andra detta till er path
     mypath = myPath
     onlyfiles = [f for f in listdir(myPath) if isfile(join(myPath, f))]
@@ -41,10 +62,10 @@ def getImagesPath(myPath):
 
     return tempfilewithpath
 
-def getTotalWidth(images, resized, padding): 
-	return (resized + padding) * len(images) / 3 
+def getTotalWidth(images, resized, padding):
+	return (resized + padding) * len(images) / 3
 
-def getMaxHeight(heights, total_width, columns, padding): 
+def getMaxHeight(heights, total_width, columns, padding):
     rows = total_width / (columns+(padding*2))
     max_height = (sum(heights) / columns * 2) + 100
     return max_height
