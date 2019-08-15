@@ -7,8 +7,6 @@ class Kryp {
   float x, y;
   float theSize;
   color kColor; 
-  int id;
-  int kId;
 
   // KONSTRUKTOR
   // klassen har en konstruktor som initierar varje kryp med aktuella variabler
@@ -23,7 +21,6 @@ class Kryp {
   // så här visar vi upp krypet
   void display() {
     fill(kColor);  
-    
     ellipse(x, y, theSize, theSize);
   }
 
