@@ -1,9 +1,12 @@
+#!/usr/bin/python
+# -*- coding: UTF-8 -*-
 import sys
 from PIL import Image
 from os import listdir
 from os.path import isfile, join
 
 def main():
+    # vi behöver variabler så vi kan iterera och skapa vår bild
     smalnum = 0;
     columns = 8
     y_offset = 8
@@ -24,13 +27,13 @@ def main():
         max_height = getMaxHeight(heights, total_width, columns, padding)
 
     else:
+        # har skapar vi först en vertikal uppsättning bilder med 16 bilder
         fileLength = len(filewithpath)/16
         print fileLength
         for n in range(fileLength):
             images = map(Image.open, filewithpath[fromNumber:toNumber])
             new_im = Image.new('RGB', (256+32, (256*17+32)))
             for im in images:
-
                 #im = im.resize((resized, resized), Image.ANTIALIAS)
                 new_im.paste(im, (16, x_offset))
                 x_offset += 256+16
@@ -40,6 +43,8 @@ def main():
             fromNumber = fromNumber + base
             toNumber = toNumber + base
             print fromNumber, toNumber
+            
+        # efter att skapat våra vertikala bilder sätter vi hop dem
         filewithpath = getImagesPath("./vertical/")
         fileLength = len(filewithpath)
         images = map(Image.open, filewithpath)

@@ -11,18 +11,19 @@ import time
 imageindex = 0;
 # cascPath = "./haarcascade_profileface.xml"
 cascPath = "haarcascade_frontalface_default.xml"
+
 def main():
     img_name = 0;
-	# Börja med att läsa och göra en lista av alla bilder
+	# 1. Börja med att läsa och göra en lista av alla bilder
     filewithpath = getImagesPath()
 
-    # för varje bild letar vi ansikten och sparar resultatet
+    # 2. för varje bild letar vi ansikten och sparar resultatet
     for imgpath in filewithpath:
         image = cv2.imread(imgpath)
         gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-        # först hittar kordinaterna för alla bilder
+        # 2.1 först hittar kordinaterna för alla bilder
         faces = detectFaces(image, gray, cascPath)
-        # sedan tar vi alla bild och sparar ner
+        # 2.2 sedan tar vi alla bild och sparar ner
         cropFaces(faces, image)
 
 

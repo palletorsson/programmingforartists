@@ -7,14 +7,14 @@ import sys
 imagePath = "./pict.jpg"
 cascPath = "haarcascade_frontalface_default.xml"
 
-# skapa haar cascade
+# 1. skapa haar cascade
 faceCascade = cv2.CascadeClassifier(cascPath)
 
-# Läs bilden gör om den till gråsskala
+# 2. Läs bilden gör om den till gråsskala
 image = cv2.imread(imagePath)
 gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
-# Kör igenkänningen
+# 3. Kör igenkänningen
 faces = faceCascade.detectMultiScale(
     gray,
     scaleFactor=1.1,
@@ -25,13 +25,13 @@ faces = faceCascade.detectMultiScale(
 
 print("Found {0} faces!".format(len(faces)))
 
-# skapa en bild av "ansiktet"
+# 4. skapa en bild av "ansiktet"
 for (x, y, w, h) in faces:
     cv2.rectangle(image, (x, y), (x+w, y+h), (0, 255, 0), 2)
     crop_img = image[y:y+h, x:x+w]
     cv2.imwrite(str(x)+str(y)+str(w)+str(h)+'.jpg', crop_img)
 
-# visa bilden
+# 5. visa och spara bilden
 cv2.imshow("Faces found", image)
 cv2.imwrite('result.jpg',image)
 cv2.waitKey(0)
