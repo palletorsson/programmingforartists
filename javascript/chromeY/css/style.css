@@ -1,0 +1,17 @@
+
+body {
+     /* ladda ner robot fonts google-fonts ändra detta till robot */
+     font-family: "Tahoma, Verdana", sans-serif;
+     font-size: 1.4em; /* 40px/16=1.2em */
+     color: grey;
+}
+.sellectMe:hover::after {
+	content: attr(data-content);
+	background-color: red;
+	border: solid 1px #ccc;
+	position: relative;
+  	left: 0;
+  	top: 0;
+  	font-size: 12px;
+		
+}

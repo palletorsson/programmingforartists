@@ -1,0 +1,18 @@
+{
+	"manifest_version": 2,
+	"name": "Chatbook",
+	"version": "0.2",
+	"description": "Facebook remover",
+	"icons": { "16": "images/x16.png",
+           "48": "images/x48.png",
+          "128": "images/x128.png" },
+	"content_scripts":
+	[
+		{
+			"matches": ["https://*.facebook.com/*"],
+			"js": ["thirdParty/jquery.js","myscript.js"],
+			"css": ["css/style.css"],
+			"run_at": "document_end"
+		}
+	]
+}
