@@ -1,27 +1,36 @@
-int[] listOfData = { 20, 75, 52, 79, 40, 50, 44, 34, 69, 73, 83, 29 };
-int dataLen = listOfData.length; 
-String[] fruits = { "äpple", "päron" };
 
+int res = 40; 
+int index = 0; 
 // once
 void setup() {
   size(600, 600); 
-  textSize(23); 
-  println(dataLen);
+  frameRate(12); 
 }
 
 // loop
-void draw() { 
-  background(255); 
-  fruits[0] = "orange"; 
-  println(fruits[0]); 
-  listOfData[5] = floor(random(230)); 
-  print(listOfData[5]); 
-  listOfData[3] = 120; 
-  text(listOfData[5], 300, 300);  
+void draw() {
 
-  for (int i = 0; i < dataLen; i = i + 1) {
-    rect(((30 * 1) + 30), (30 + 1 * i)+30, listOfData[i], 10);
+ // the x is the horizontal position 
+ for (int x = 0; x < width/res; x = x + 1) {
+  // the y is the vertical position 
+  for (int y = 0; y < width/res; y = y + 1) {
+     rect(res * y, res * x , res, res);
+     if (index % 23 == 0) {
+       fill(random(255), random(255), random(255)); 
+     } else {
+       fill(random(255)); 
+     }
+       index++; 
   }
+
+  //save("random" + index + ".jpg"); 
+  if (index > 100) {
+    //  noLoop(); 
+  }
+
+ }
+ 
+ 
 
   // noLoop();
 } // end of draw 

@@ -1,11 +1,10 @@
 StringList listOfPersons;
 StringList finalList;
-
 String currentOne = "";
 String currentTwo = "";
 int count = 1; 
 String[] dListOfPersons = {
-  "Ida", "Adam", "William", "Majli", "Hanna.S", "Amanda", "Hanna", "Signe", "Rut","Ulrika"
+  "Martin", "Erik", "Fabian", "Jenny", "Nanny", "Tina", "Håkan", "Malin", "Sabina", "Petter" 
 }; 
 
 void setup() {
@@ -52,3 +51,6 @@ void PrintList() {
       println(finalList.get(j));
     }
 }
+
+
+//   "Ida", "Adam", "William", "Majli", "Hanna.S", "Amanda", "Hanna", "Signe", "Rut","Ulrika"
