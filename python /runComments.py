@@ -76,6 +76,9 @@ print my_list_1[0] + "" + my_list_2[2]
 for i in range(0,2):
     print my_list_1[i] + "" + my_list_2[i]
 
+for i in my_list_1:
+    print my_list_1[i]
+    
 # läs webbsida och kolla vilka ord som är vanligast
 import urllib
 from bs4 import BeautifulSoup
