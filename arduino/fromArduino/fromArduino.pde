@@ -1,18 +1,20 @@
 import processing.serial.*;
-Serial get;
-float background_color;
-String nameOfPort = "/dev/cu.usbmodem14111":
+Serial myPort;
+int background_color;
+
 void setup()
 {
   size(500,500);
-  get = new Serial(this, nameOfPort, 9600);
-  get.bufferUntil('\n'); 
+  String nameOfPort = Serial.list()[2];
+  println(nameOfPort);
+  myPort = new Serial(this, nameOfPort, 9600);
+  myPort.bufferUntil('\n'); 
 }
 
 void draw() {
-  background(150, 50, background_color);
-}
-
-void serialEvent (Serial get) {
-  background_color = float(get.readStringUntil('\n'));
+  println(background_color); 
+  background(150, background_color, background_color);
+  if ( myPort.available() > 0) {
+    background_color = int(myPort.readStringUntil('\n'));
+  }
 }

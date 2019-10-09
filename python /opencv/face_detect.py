@@ -12,6 +12,7 @@ faceCascade = cv2.CascadeClassifier(cascPath)
 
 # 2. Läs bilden gör om den till gråsskala
 image = cv2.imread(imagePath)
+print image
 gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
 # 3. Kör igenkänningen

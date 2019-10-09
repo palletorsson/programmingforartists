@@ -14,15 +14,15 @@ int lastMouseX = 0;
 int lastMouseY = 0; 
 void setup() {
 
-  //  fullScreen();
-  size(800,800);
-  strokeWeight(4);
+  fullScreen();
+  // size(800,800);
+  strokeWeight(3);
 
   for (int i = 0; i < video_width; i++) {
     colorsList[i] = color(random(255));
   }
   myVideo = new Movie(this, "input.mp4");
-  background(0);
+  background(255);
   myVideo.loop();
 }
 
@@ -37,7 +37,7 @@ void draw() {
     for (int i = 0; i < video_width-1; i++) {
       colorsList[i] = myVideo.pixels[i * video_slice_x];
     }
-    for (int j = 0; j < video_width-20; j=j+2) {
+    for (int j = 0; j < video_width; j++) {
       stroke(colorsList[j]); 
       line(lastMouseX+x, lastMouseY+j-video_slice_x, mouseX+x, mouseY+j-video_slice_x);
       

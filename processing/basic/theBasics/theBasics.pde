@@ -3,6 +3,9 @@ import processing.sound.*;
 TriOsc triangle;
 
 
+
+
+
 // 1. skapa variable "hello world" och kör programmet
 String hello = "Hello World";
 
@@ -14,6 +17,7 @@ float myFloar = 2.3;
 // 9. skapa lista och läs 
 int[] myList = {1, 23, 75, 333}; 
 void setup() {
+  
   // 6. importera och använd ett bibliotek
   triangle = new TriOsc(this);
   triangle.play();
@@ -22,6 +26,13 @@ void setup() {
     println(myList[i]); 
   
   }
+  // 11. läs webbsida och kolla vilka ord som är vanligast
+  String[] lines = loadStrings("http://processing.org/about/index.html");
+  println("there are " + lines.length + " lines");
+  for (int i = 0 ; i < lines.length; i++) {
+    println(lines[i]);
+  }
+  // svår löst med processing finns inget b
 }
 void draw() {
   // 5. använd funktionen och skriv ut dess värd
@@ -60,6 +71,3 @@ String myRetFunction(int a) {
 
 // 7. funktion med standardvärdet för ett argument och använd random
 // ...
-
-// 11. läs webbsida och kolla vilka ord som är vanligast
-// ... hmm känns lättare med python. 
