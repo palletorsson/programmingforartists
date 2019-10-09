@@ -1,5 +1,3 @@
-﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class triggerCapsuleAnim : MonoBehaviour {
@@ -15,7 +13,7 @@ public class triggerCapsuleAnim : MonoBehaviour {
 		if (Input.GetKeyDown(KeyCode.F))
 		{
 			Debug.Log("Moving");
-			anim.Play("CapsuleAnimation");
+			anim.Play("PillAnimation");
 			anim.speed = 2;
 		}
 		if (Input.GetKeyDown (KeyCode.G)) {
