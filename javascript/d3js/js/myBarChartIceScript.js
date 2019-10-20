@@ -22,14 +22,14 @@ d3.json('./data/arctic-sea-ice-extent-4.exhibit.json').then(function(d) {
         tooltip,
         myChart;
 
-  var d = d.items; 
+  var d = d.items;
 
   for (var i = 0; i<d.length; i++) {
     temperatures.push(d[i].september);
     dates.push(d[i].year);
   }
 
-  var tMax = d3.max(temperatures); 
+  var tMax = d3.max(temperatures);
 
   yScale = d3.scaleLinear()
     .domain([0, tMax])

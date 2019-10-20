@@ -36,3 +36,6 @@ for (x, y, w, h) in faces:
 cv2.imshow("Faces found", image)
 cv2.imwrite('result.jpg',image)
 cv2.waitKey(0)
+
+# https://docs.opencv.org/trunk/db/d28/tutorial_cascade_classifier.html
+# kolla har for circlar

@@ -4,8 +4,8 @@ $(document).ready(function() {
         url: "./data/pulsar.csv",
         dataType: "text",
         success: function(data) {
-        	
-        	init(data); 
+
+        	init(data);
 
         }
      });
@@ -21,13 +21,13 @@ function init(data) {
 	//scene.fog = new THREE.FogExp2(0x00ff00, 3);
 
 	var rowsLen = data.split(/\r\n|\n/);
-    
-    var colLen = rowsLen[0].split(","); 
-    console.log(colLen); 
-	data = data.split(","); 
+
+    var colLen = rowsLen[0].split(",");
+    console.log(colLen);
+	data = data.split(",");
 
 	var camera = new THREE.PerspectiveCamera(
-		300, // fov 
+		300, // fov
 		window.innerWidth / window.innerHeight, //aspect
 		0.25, // near
 		1000); // far
@@ -43,10 +43,10 @@ function init(data) {
 	document.body.appendChild(renderer.domElement);
 	controls = new THREE.OrbitControls( camera, renderer.domElement );
 	// skapa ett plan och ett material till kub
-   
+
     // and a point light to represent the source of the light volume
-   
-	
+
+
 				var directionalLight = new THREE.DirectionalLight( 0x009999, 0.5 );
 				directionalLight.position.set( 1, 1, 1 ).normalize();
 				scene.add( directionalLight );
@@ -66,13 +66,13 @@ function init(data) {
 	var texture1 = textureLoader.load( "data/cell-grid.jpg" );
 	var material = new THREE.MeshPhongMaterial( {
 								map: texture1,
-								
+
 
 								shininess: 300,
-								
+
 							} );
 	var material = new THREE.MeshLambertMaterial( {  side: THREE.DoubleSide } );
-	
+
 
 	var geometry = new THREE.PlaneGeometry(400, 600, 298, 79);
 
@@ -87,7 +87,7 @@ function init(data) {
 	});
 
 	plane.rotation.x = -Math.PI/2;
-	
+
 
 	plane.verticesNeedUpdate = true;
 	var gui = new dat.GUI();
@@ -101,7 +101,7 @@ function init(data) {
 
 	// lägg till kuben till scenen
 	scene.add(cube);
-	
+
 	cube.position.y = -200;
 
     // sätt kamerans position så vi kan se boxen
@@ -110,8 +110,8 @@ function init(data) {
 	camera.position.z = 80;
 
 	camera.lookAt(new THREE.Vector3(0, 1, 0));
-	
-	// loop funktioner 
+
+	// loop funktioner
 	var rotateCamera = function () {
 	     var x = camera.position.x;
 	     var z = camera.position.z;
@@ -119,14 +119,14 @@ function init(data) {
 	     camera.position.z = z * Math.cos(control.rotSpeed) - x * Math.sin(control.rotSpeed);
 	     camera.lookAt(scene.position);
 	}
-	// rotera kuben och rendera scenen 
+	// rotera kuben och rendera scenen
 	var animate = function () {
 	    requestAnimationFrame(animate);
 		//rotateCamera();
 	    renderer.render(scene, camera);
 
 	};
-	// starta animationen 
+	// starta animationen
 	animate();
 
 

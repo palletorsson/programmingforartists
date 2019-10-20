@@ -1,22 +1,29 @@
-body { 
-    font-family: 'Roboto', sans-serif;     
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+button {
+  color: black;
+  font-size: 23px;
+  margin: 4px;
 }
 
 a {
-    color: black; 
-    padding: 10px; 
-    font-size: 11px; 
-    text-transform: uppercase; 
+    color: black;
+    padding: 10px;
+    font-size: 11px;
+    text-transform: uppercase;
 }
 
 a:hover {
-    color: gray;   
+    color: gray;
 }
 
 .container {
-    margin-left: auto; 
-    margin-right: auto; 
-    width:80%; 
+    margin-left: auto;
+    margin-right: auto;
+    width:80%;
+    margin: auto;
 }
 
 .container:after {
@@ -36,12 +43,12 @@ a:hover {
 div.gallery-item {
     margin: 4px;
     border: 1px solid pink;
-    width: 400px; 
-    float:left; 
+    width: 400px;
+    float:left;
 }
 
 div.gallery-item a {
-    padding: 0px; 
+    padding: 0px;
 }
 
 
@@ -56,7 +63,7 @@ div.gallery-item img {
 
 div.description {
     padding: 10px;
-} 
+}
 
 .about {
     height: 200px;

@@ -8,15 +8,13 @@
       .attr("height", 400);
 
   svgContainer.style("top", 100)
-              .style("left", 400) 
-              .style("position", "absolute"); 
-
+              .style("left", 400)
+              .style("position", "absolute");
 
   var circles = svgContainer.selectAll("circle")
                             .data(data)
                             .enter()
                             .append("circle")
-                         
 
   circles
      .transition()
@@ -44,18 +42,13 @@ texts
    .style("fill", "green")
    .style("stroke", "black");
 
-var label = bodySelection.selectAll("svg")
-            .data(["My data"])
-            .enter().append("span")
-            .text("cracy")
-   
-label
-   .transition()
-   .duration(3000)
-   .delay(function() { return i * 10; })
-   .attr("x", function() { return 100; })
-   .attr("y", function() { return 300; })
-   .text(function() { return "cracy data"; })
-   .style("fill", "green")
-   .style("stroke", "black");  
 
+var label =  d3.select("#vis")
+       .text("Circle Love")
+       .style("text-align", "center")
+       .style("line-height", "100px")
+       .style("font-size", "24px")
+       .style("transform", "rotate(-180deg) scale(0.001, 0.001)") //del 2
+       .transition() // del 3
+       .duration(2000) // del 4
+       .style("transform", null);

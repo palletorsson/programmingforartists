@@ -1,6 +1,6 @@
 
 body {
-  background-color: black; 
+  background-color: white;
 
 }
 svg {
@@ -14,18 +14,18 @@ svg {
 .freq,
 .title {
   font-size: 16px;
-  fill: #444;
+  fill: #111;
 }
 .freq {
   text-anchor: end;
 }
 .axis path,
 .axis line {
-  stroke: #444;
+  stroke: #111;
   stroke-width: .75;
   fill: none;
 }
 .axis text {
-  fill: #444;
+  fill: #111;
   text-anchor: middle;
 }

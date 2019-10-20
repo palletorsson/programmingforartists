@@ -1,27 +1,19 @@
-
-var height = 700
+var height = 450
   , width = height / 1.138
-  , top_margin = ~~( width / 13 )+20
+  , top_margin =  width / 13
   , amplitude = width / 350
   ;
 
 var svg = d3.select( 'body' ).append( 'svg' )
     .attr( 'width', 960 )
     .attr( 'height', height + top_margin + 10 + 10 )
-    .append( 'g' )
+  .append( 'g' )
     .attr( 'transform', `translate(${960/2-width/2},${10})` );
 
-// ../data/pulsar.csv
-// https://gist.githubusercontent.com/borgar/31c1e476b8e92a11d7e9/raw/0fae97dab6830ecee185a63c1cee0008f6778ff6/pulsar.csv', function ( raw ) {
-  
-var inter = setInterval(function() {
-                    updateData();
-            }, 5000);
+function play() {
+d3.text('./data/pulsar.csv', function ( raw ) {
 
-function updateData()  {
-d3.text('../data/pulsar.csv', function ( raw ) {
-  
-  var data = d3.csv.parseRows( raw, r => r.map( Number ) ),
+     d3.csv.parseRows( raw, r => r.map( Number ) ),
       x = d3.scale.linear()
             .domain([ 0, data[0].length - 1 ])
             .range([ 0, width ]),
@@ -31,8 +23,8 @@ d3.text('../data/pulsar.csv', function ( raw ) {
 
   var line = d3.svg.line()
       .x( (d,i) => x( i ) )
-      .y( (d,i) => -d -Math.random(window.screenX) * amplitude );
-  
+      .y( d => -d * amplitude );
+
   svg.append( 'g' )
     .selectAll( '.wave' ).data( data ).enter()
       .append( 'path' )
@@ -88,4 +80,4 @@ d3.text('../data/pulsar.csv', function ( raw ) {
 
 });
 }
-
+play(); 
