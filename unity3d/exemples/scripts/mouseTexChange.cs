@@ -7,25 +7,33 @@ public class mouseTexChange : MonoBehaviour
 
     public Texture[] textures;
     public Renderer rend;
-    private int index = 0; 
-    // Start is called before the first frame update
+    private int index = 0;
+ 
+    Camera MainCamera;
 
-
-    // Update is called once per frame
-    void Update()
+    void Start()
     {
+        MainCamera = Camera.main;
+    }
 
-        if (Input.GetKeyDown(KeyCode.G))
-        {
-            index = index + 1;
-        }
-     
-        if (index > textures.Length - 1)
-        {
-            index = 0;
-        }
-       
-        rend.material.mainTexture = textures[index];
+        // Update is called once per frame
+        void Update() { 
+           
+        if (Input.GetMouseButtonDown(0)){ // if left button pressed...
+        
+            Ray ray = MainCamera.ScreenPointToRay(Input.mousePosition);
+             RaycastHit hit;
+             if (Physics.Raycast(ray, out hit)){
 
+                index = index + 1;
+                if (index > textures.Length - 1)
+                    {
+                        index = 0;
+                    }
+
+                rend.material.mainTexture = textures[index];
+
+            }
+        }
     }
 }
