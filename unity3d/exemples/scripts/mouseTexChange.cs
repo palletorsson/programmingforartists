@@ -16,9 +16,9 @@ public class mouseTexChange : MonoBehaviour
         MainCamera = Camera.main;
     }
 
-        // Update is called once per frame
-        void Update() { 
-           
+    // Update is called once per frame
+    void Update() { 
+       
         if (Input.GetMouseButtonDown(0)){ // if left button pressed...
         
             Ray ray = MainCamera.ScreenPointToRay(Input.mousePosition);
