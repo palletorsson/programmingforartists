@@ -1,0 +1,109 @@
+
+body {
+  margin: 0;
+}
+/* navigation classes */
+
+.center {
+  width: 100%;
+  text-align: center;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  position: relative;
+}
+
+a {
+  color: black;
+  padding: 10px;
+  font-size: 12px;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+a:hover {
+  color: pink;
+  text-decoration: underline;
+}
+
+
+header {
+  background-color: lightgray;
+  border-bottom: dotted black 1px;
+}
+
+/* main classes */
+.container {
+
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.gallery {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.gallery-item {
+  display: inline-block;
+  width: 600px;
+  padding: 40px;
+
+}
+
+
+.gallery-item a {
+  padding:2px;
+}
+
+.gallery-item:hover {
+  border: 1px solid black;
+}
+
+
+.gallery-item img {
+  width:100%;
+  height: auto;
+  transform-origin: 65% 75%;
+  transition: transform 3s, filter 2s ease-out;
+}
+
+.gallery-item img:hover {
+    transform: scale(0.97);
+}
+/* footer classes */
+
+footer {
+  text-transform: lowercase !important;
+  display:flex;
+  justify-content: center;
+}
+
+.footeritem {
+  padding: 10px;
+  margin: 10px 40px;
+}
+
+.description {
+  padding: 10px;
+  text-align: center;
+}
+
+
+/* detail pages */
+.gallery-detail {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+.detail-target-img {
+  width:100%;
+}
+
+.back-to-all-work {
+  display: block;
+  padding-top: 12px;
+}

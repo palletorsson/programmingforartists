@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title> jquery gallery </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+    <meta charset="utf-8" />
+    <link href="./css/myStyle.css" rel="stylesheet">
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.js"
+      integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+      crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <header>
+      <!-- start of navigation -->
+      <nav class="center">
+        <a href="./index.htm" alt="home"> Home </a>
+        <a href="./subpage/about.htm" alt="about"> About </a>
+        <a href="./contact.htm" alt="contact"> Contact </a>
+      </nav>
+    </header>
+
+    <main class="container">
+      <div class="col gallery">
+        <!-- target div-->
+        <div class="target-div">
+          <div class="row gallery-item">
+            <a  class="link-detail" alt="work one">
+              <img src="./img/img_1.jpg" class="target-img" alt="thumbnail of my first work" />
+            </a>
+            <div class="description" alt="image of sculpture">
+              <span class="target-title"> Google Dreapdream </span>
+              <span class="target-year"> 2020 <span>
+            </div>
+          </div> <!-- end of gallery-item 1 -->
+      </div> <!-- end of new target 1 -->
+
+        <div class="row gallery-item">
+          <a href="./work/detail_3.htm" alt="work one">
+            <img src="./img/img_1.jpg" alt="thumbnail of my first work" />
+          </a>
+          <div class="description" alt="image of sculpture">
+            Google Dreapdream
+          </div>
+        </div> <!-- end of gallery-item 1 -->
+
+        <div class="gallery-item">
+          <a href="./work/detail_4.htm" alt="work one">
+            <img src="./img/img_1.jpg" alt="thumbnail of my first work" />
+          </a>
+          <div class="description" alt="image of sculpture">
+            Google Dreapdream
+          </div>
+        </div> <!-- end of gallery-item 1 -->
+      <div class="worklist"> </div>
+      </div> <!-- end of gallery items -->
+      <div class="target-div-detail">
+        <div class="gallery-detail">
+          <a class="back-to-all-work"> << Back to all work </a>
+          <hr />
+          <a alt="work one" class="back-to-all-work">
+            <img src="./img/img_1.jpg" class="detail-target-img" alt="thumbnail of my first work" />
+          </a>
+          <div class="description detail-target-title" alt="image of sculpture">
+            Google Dreapdream
+          </div>
+
+        </div> <!-- end of gallery-item 1 -->
+      </div> <!-- end of gallery-item 1 -->
+    </main>
+
+    <footer class="center">
+      <div class="footeritem"> interna länkar </div>
+      <div class="footeritem"> social media </div>
+      <div class="footeritem"> någon annat </div>
+    </footer>
+    <script src="./js/myScript.js"> </script>
+  </body>
+</html>

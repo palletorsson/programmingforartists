@@ -2,16 +2,14 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
-/*  header styles */
-.center {
-    left: 0;
-    position: relative;
-    text-align: center;
-    width: 100%;
+button {
+  color: black;
+  font-size: 23px;
+  margin: 4px;
 }
 
 a {
-    color: #4b2257;
+    color: black;
     padding: 10px;
     font-size: 11px;
     text-transform: uppercase;
@@ -19,14 +17,12 @@ a {
 
 a:hover {
     color: gray;
-    padding: 40px;
 }
 
-/*  main styles */
 .container {
     margin-left: auto;
     margin-right: auto;
-    width:80%;
+    margin: auto;
 }
 
 .container:after {
@@ -35,16 +31,24 @@ a:hover {
     clear: both;
 }
 
+.center {
+    left: 0;
+    position: relative;
+    text-align: center;
+    width: 100%;
+
+}
+
 div.gallery-item {
     margin: 4px;
     border: 1px solid pink;
-    width: 400px;
-    float:left;
+
 }
 
 div.gallery-item a {
     padding: 0px;
 }
+
 
 div.gallery-item:hover {
     border: 1px solid black;
@@ -53,9 +57,26 @@ div.gallery-item:hover {
 div.gallery-item img {
     width: 100%;
     height: auto;
+
 }
 
-.description {
+div.description {
     padding: 10px;
+}
 
+.about {
+    height: 200px;
+}
+
+@media only screen and (min-width: 768px) {
+   .container {
+       width:80%;
+   }
+   div.gallery-item {
+    margin: 4px;
+ border: 1px solid pink;
+ width: 400px;
+ float:left;
+
+  }
 }
