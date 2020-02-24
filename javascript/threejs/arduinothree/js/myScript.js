@@ -45,10 +45,12 @@ renderer.render(scene, camera);
 var getdata = function () {
 
 			$.getJSON( "http://172.18.12.68:8081", function( data ) {
-				let newsize = data.distvalue;
-				cube.scale.x = newsize;
-				cube2.scale.y = newsize;
-				cube3.scale.z = newsize;
+				let newsize = (data.distvalue-945)/10;
+				console.log(newsize);
+				if (newsize > 0) {
+					cube.scale.x = newsize;
+				}
+
 			});
 
 }
@@ -62,7 +64,7 @@ var animate = function () {
   cube3.rotation.x += 0.01;
   cube3.rotation.y += 0.01;
 
-	let newsize = getdata();
+	getdata();
 
 
   renderer.render(scene, camera)
