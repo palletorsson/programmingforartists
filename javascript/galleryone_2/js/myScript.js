@@ -1,6 +1,6 @@
 console.log("hello gallery");
 
-// my works
+// my works including imgs
 var works = [
  {
     "title": "Museum Meltdown",
@@ -31,10 +31,16 @@ var works = [
 // get first image item by id and clone the element
 var galleryItem = $(".target-div");
 var workElement = galleryItem.clone();
+
 var galleryDetail = $(".target-div-detail");
 var galleryDetailClone = galleryDetail.clone();
+
+var workDetail = $(".target-div-detail-info");
+var workDetailClone = workDetail.clone();
+
 console.log(galleryDetail.html());
 galleryDetail.hide();
+
 // get the gallery element
 var worklist = $(".gallery");
 
@@ -55,19 +61,28 @@ function showAll() {
 showAll();
 
 // detailed view
-function addDetailClick() {
-  $(".link-detail").click(
-    function() {
-      event.preventDefault();
-      worklist.empty();
-      var thework = works[this.id];
-      $('.detail-target-title', galleryDetailClone).html(thework.title + " -  " + thework.year + " <hr> " + thework.description);
-      $('.detail-target-img', galleryDetailClone).attr('src', "./img/" +thework.img);
-      worklist.append( galleryDetailClone.html() );
-      addBackClick();
-    }
-  );
-}
+
+
+
+function addDetailClick() { 
+  $(".link-detail").click( 
+    function() { 
+        event.preventDefault(); 
+        worklist.empty(); 
+        var thework = works[this.id]; 
+        var tempworks = "";
+        for (var i = 0; i < thework.imgcount; i++) { 
+          $('.detail-target-img', galleryDetailClone).attr('src', "./img/" + thework.imgprefix + "_" + (i+1) + ".jpg"); 
+          tempworks = tempworks + galleryDetailClone.html(); 
+        } 
+        var detailInfo = $('.detail-target-title', workDetailClone).html(thework.title + " -  " + thework.year + " <hr> " + thework.description); 
+        tempworks = tempworks + detailInfo.html(); 
+        worklist.append( tempworks ); 
+        addBackClick(); 
+    } 
+); }
+
+
 function addBackClick() {
   $(".back-to-all-work").click(
     function() {
@@ -77,3 +92,29 @@ function addBackClick() {
     }
   );
 }
+
+// about logic
+var aboutContent = $(".target-div-about");
+var aboutLink = $(".about");
+aboutContent.hide();
+aboutLink.click(
+  function() {
+    event.preventDefault();
+    worklist.empty();
+    worklist.append(aboutContent.html());
+    addBackClick();
+  }
+);
+
+// contact logic
+var contactContent = $(".target-div-contact");
+var contactLink = $(".contact");
+contactContent.hide();
+contactLink.click(
+  function() {
+    event.preventDefault();
+    worklist.empty();
+    worklist.append(contactContent.html());
+    addBackClick();
+  }
+);
