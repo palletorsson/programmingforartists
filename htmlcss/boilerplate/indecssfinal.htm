@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+  <html> <!-- här börjar html -->
+    <head>  <!-- meta, title och länkar till css och javascript -->
+    <title> Jag är titeln på en enkel sida </title>
+    <!-- skriv css -->
+    <style>
+    * {
+         color: green;
+    }
+
+    body {
+         /* ladda ner robot fonts google-fonts ändra detta till robot */
+         font-family: "Tahoma, Verdana", sans-serif;
+         font-size: 12px;
+         color: grey;
+         background-color: yellow;
+    }
+
+    /* grouping selector */
+    p, div {
+    	font-family: "Times New Roman", Times, serif;
+     	font-size: 14px;
+      width: 40%;
+      background-color: #00FF00;
+    }
+
+    /* cascading, specificity, !important */
+    p {
+         width: 660px;
+         background-color: #f2f;
+         padding:30px; 
+    }
+
+    /* Descending selector */
+    h2 a {
+     	font-size: 55px;
+    	font-weight: bold;
+    }
+
+    /* padding is a shorthand sellector */
+    img {
+      position: fixed;
+      top: 0;
+      z-index: -1;
+     	float: right;
+      border-bottom: 10px solid gold;
+      padding: 12px 2px;
+      transform: rotate(10deg);
+    }
+</style>
+    </head>
+   <body>  <!-- det som sidan visar -->
+        <div><img src="https://smiley.com/imagecache/b989c662836ccc4b2fcf41133de7f12f.jpg"></div>
+    <h1> jag är en rubrik </h1>
+        <h2> jag är annan en rubrik  <a> link </a></h2>
+      <p>
+        <!-- innerHTML -->
+       "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+     </p>
+
+    </body>
+</html> <!-- här slutar html -->
