@@ -1,42 +1,44 @@
-body { 
-    font-family: 'Roboto', sans-serif;     
-}
-
-header {
-    color: green;
-}
-
-#header1 {
-    font-size: 23px; 
-}
-
-.firstheader {
-    background-color: black; 
+body {
+    font-family: 'Roboto', sans-serif;
 }
 
 /*  header styles */
 .center {
-    left: 0;
-    position: relative;
-    text-align: center;
-    width: 100%;
+  left: 0;
+  position: relative;
+  text-align: center;
+  width: 100%;
+  border-bottom: 1px solid gray;
+  padding-bottom: 8px;
+  margin-bottom: 4px;
+}
+
+a {
+    color: black;
+    padding: 10px;
+    font-size: 11px;
+    text-transform: uppercase;
+}
+
+a:hover {
+    color: pink;
+    text-decoration: none;
 }
 
 /*  main styles */
 .container {
-    margin-left: auto; 
-    margin-right: auto; 
-    width:80%; 
+    margin-left: auto;
+    margin-right: auto;
+    width:80%;
 }
 
 .container:after {
-	content: "";
+	  content: "";
     display: table;
     clear: both;
 }
+
 /*  footer styles */
 footer:after {
   clear:both;
 }
-
-
