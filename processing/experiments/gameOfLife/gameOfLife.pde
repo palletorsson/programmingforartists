@@ -1,25 +1,33 @@
 // game of life programming for artist 
-int rectSize = 8; 
+
+// skala ytan
+int rectSize = 32; 
+
 int columns = 800/rectSize; 
 int rows = 600/rectSize; 
+
+
 int[][] board = new int[columns][rows];
 
 void setup() {
   size(800, 600);
 
-  for (int i=0; i < columns; i++) {
-    for (int j=0; j < rows; j++) {
+  for (int i=0; i < columns-1; i++) {
+    for (int j=0; j < rows-1; j++) {
 
-      if (random(1) < 0.5) {
+      if (random(1) < 0.1) {
         board[i][j] = 1;
       } else {
         board[i][j] = 0;
       }
     }
   }
-  println(board);
+  
 }
 void draw() {
+  println(rows);
+
+  // ändra antal frames med musen
   if (mouseX > 60) {
     frameRate(mouseX/40);
   } else {
@@ -36,15 +44,16 @@ void draw() {
       rect(i*rectSize, j*rectSize, rectSize*rectSize, rectSize*rectSize);
     }
   }
-  for (int i=1; i < columns-1; i++) {
-    for (int j=1; j < rows-1; j++) {      
-      int index = i*j+j; 
+  for (int i=0; i < columns-1; i++) {
+    for (int j=0; j < rows-1; j++) {      
       // kolla pixel 
       // sätt nytt värde 
       int newValue = checkPixelState(i, j);
-      board[i][j] =newValue;
+      board[i][j] = newValue;
     }
   }
+
+  
 }
 
 int checkPixelState(int x, int y) {
@@ -52,11 +61,19 @@ int checkPixelState(int x, int y) {
   // rutor horisontellt, lodrätt eller diagonalt.
   int my = board[x][y];
   int sum = 0;
-  for (int i = -1; i <= 1; i++) {
-    for (int j = -1; j <= 1; j++) {
-      sum += board[(x+i+columns)%columns][(y+j+rows)%rows];
+  
+  // kanter högst upp och till vänster
+  if (y == 0 || y == rows) {
+     // println("rows" , x, y, rows, columns); 
+         
+  } else {
+    for (int i = -1; i <= 1; i++) {
+      for (int j = -1; j <= 1; j++) {
+        sum += board[(x+i+columns)%columns][(y+j+rows)%rows];
+      }
     }
   }
+
   sum -= board[x][y];
   // En cell dör om den har färre än två grannar (isolering) 
   // eller om den har fler än tre grannar (trängsel).
