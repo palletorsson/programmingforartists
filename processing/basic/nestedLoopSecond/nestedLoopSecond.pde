@@ -1,4 +1,3 @@
-PImage img;
 int cellsize = 40; 
 int halfsize = cellsize/2; 
 int r = 20;
@@ -10,8 +9,6 @@ void setup() {
 
 void draw() {
   // background(0);
-  loadPixels();
-  
   for ( int i = halfsize; i < width; i=i+cellsize*2) {
     for ( int j = halfsize; j < height-cellsize; j=j+cellsize*2) {
       // float r = floor(random(1, cellsize));
