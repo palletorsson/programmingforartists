@@ -9,7 +9,6 @@ void setup() {
 
 void draw() {
   background(255);
-  loadPixels();
   for ( int i = halfsize; i < width; i=i+cellsize*2) {
     ellipse(i+halfsize, cellsize, cellsize, cellsize);
   }
