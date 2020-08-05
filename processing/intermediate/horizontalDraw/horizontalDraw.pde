@@ -10,13 +10,14 @@ void draw() {
 
   // öka värdet på movingValue med slumptalet 
   movingValue = addTwoNumbers(ranNumOne, movingValue);
-
+  println(movingValue);
   // rita en linje 
   line(0, movingValue, width, movingValue); 
   // line(movingValue, 0, movingValue, height); 
   
   // en annan funktion, stämmer av värdet 
-  checkMoveValue(movingValue); 
+  movingValue = checkMoveValue(movingValue); 
+  
 }
 
 int addTwoNumbers(int a, int b) {
@@ -26,10 +27,14 @@ int addTwoNumbers(int a, int b) {
 
 int checkMoveValue(int movingValue) {
   if (movingValue < 0) {
-    movingValue = 0;
+    movingValue = 5;
   }
   if (movingValue > height) {
-    noLoop();
+    int pre = int(random(300000)); 
+    save(pre+"cross.tiff");
+    movingValue = 5; 
+    background(135); 
   }
+  println(movingValue);
   return movingValue; 
 }
