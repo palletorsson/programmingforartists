@@ -1,4 +1,4 @@
-PImage img;
+
 int cellsize = 40; 
 int halfsize = cellsize/2; 
 
