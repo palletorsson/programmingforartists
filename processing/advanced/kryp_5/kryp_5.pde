@@ -4,7 +4,7 @@
 ArrayList allaKryp;
 
 void setup() {
- fullScreen();
+ size(600,600);
   stroke(126);
   // INITIERA 
   allaKryp = new ArrayList();

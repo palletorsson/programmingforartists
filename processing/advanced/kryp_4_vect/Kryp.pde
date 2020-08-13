@@ -14,7 +14,7 @@ class Kryp {
   int kId;
   float time; 
   float gravityForce = 1; 
-  float windForce = 0.5;
+  float windForce = 0.01;
   float maxforce;    // Maximum steering force
   float maxspeed;    // Maximum speed
 
@@ -61,9 +61,12 @@ class Kryp {
 
   // krypet rör sig, uppdatera postionen x och y  
   void move() {
-    vect.x += noise(time)-1;
-    vect.y += noise(time+10)-1;
+    float r = random(1); 
+    if (r < 0.1) {
+    vect.x += (noise(time)-1)*2;
+    vect.y += (noise(time+10)-1)*2;
     time+=0.001; 
+    }
   
   }
 
@@ -75,30 +78,36 @@ class Kryp {
 
   // vind-funktion
   void wind() {
-    windForce = mouseX/300; 
+   windForce = mouseX/400; 
     vect.x += windForce;
   }
 
 
   // kant-funktion
   void edges() {
-    if (vect.x > width+10) {
-      vect.x = 0.5;
+    if (vect.x > 600) {
+      vect = new PVector(400, 400);
+       theSize = theSize + 3; 
     }
-    if (vect.y > height+10) {
-      vect.y = 1;
+    if (vect.y > 600) {
+      vect = new PVector(400, 400);
+       theSize = theSize + 3; 
+       stroke(random(200), random(200), random(200)); 
     }
-    if (vect.x < -10) {
-      vect.x = width;
+    if (vect.x < 200) {
+      vect = new PVector(400, 400);
+       theSize = theSize + 3; 
     }
-    if (vect.y < -10) {
-      vect.y = height;
+    if (vect.y < 200) {
+      vect = new PVector(400, 400);
+      theSize = theSize + 3; 
+      stroke(255, 255, random(225, 255)); 
     }
   }
   // Separation
   // Method checks for nearby vehicles and steers away
   void separate (ArrayList<Kryp> kryps) {
-    float desiredseparation = theSize*4;
+    float desiredseparation = theSize;
     PVector sum = new PVector();
     int count = 0;
     // For every boid in the system, check if it's too close
