@@ -12,6 +12,7 @@ int x=0;
 color[] colorsList = new color[video_width];
 int lastMouseX = 0; 
 int lastMouseY = 0; 
+
 void setup() {
 
   fullScreen();
@@ -49,4 +50,5 @@ void draw() {
     lastMouseY = mouseY; 
     lastMouseX = mouseX;
   }
+  myVideo.speed((float) mouseY/(width/3));
 }
