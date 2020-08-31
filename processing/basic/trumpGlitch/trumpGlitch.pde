@@ -1,12 +1,13 @@
 PImage img;
-int cellsizeX = 2; 
-int cellsizeY = 2; 
+int cellsizeX = 4; 
+int cellsizeY = 4; 
 int cols, rows; 
+
 
 // byt ut värdet på cell
 void setup() {
   // storleken på fönstet får inte var större än bildens pixlar
-  size(800, 800);
+  size(800, 600);
   img = loadImage("img.jpg");
   background(255);
   smooth();
@@ -16,24 +17,25 @@ void setup() {
 
 void draw() {
   loadPixels();
-  for ( int i = 0; i < cols; i++) {
+  for ( int i = 10; i < cols-10; i++) {
     // Begin loop for rows
-    for ( int j = 0; j < rows; j++) {      
+    for ( int j = 10; j < rows-10; j++) {      
       int x = i*cellsizeX + cellsizeX; // x position
       int y = j*cellsizeY + cellsizeY; // y position
       int loc = x + y*width;           // pixel plats
       float r = red(img.pixels[loc]);
-      float g = green(img.pixels[loc]);
-      float b = blue(img.pixels[loc]);
+      float b = green(img.pixels[loc]);
+      float g = blue(img.pixels[loc]);
       noStroke();
-      fill(r, g, b, 100);  
-      ellipse(x, y, mouseX/10-10, mouseY/10-10);
+      fill(r, g, b, mouseX/cellsizeY);  
+      rect(x, y, 4, 4);
     }
   }
-  if (cellsizeX < 16) {
+  if (cellsizeX < 4) {
   cellsizeX = 2; 
   cellsizeY  = 2; 
   }
   cellsizeX++; 
   cellsizeY++; 
+  updatePixels();
 }
