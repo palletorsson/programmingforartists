@@ -6,7 +6,7 @@ SoundFile sample;
 Amplitude rms;
 
 // Definiera en scale factor 
-float scale = 5.0;
+float scale = 3.0;
 
 // Definiera en mjukhethetfaktor Declare
 float smoothFactor = 0.25;
@@ -16,11 +16,11 @@ float sum;
 // Definiera hur stora ringarna skall vara 
 int cellsize = 100; 
 int halfsize = cellsize/2; 
-
+int move = 0; 
 
 
 void setup() {
-  size(1400, 600);
+  size(600, 600);
 
   // Ladda och spela ett ljudfilen och loopa ljudet
   sample = new SoundFile(this, "test.mp3");
@@ -35,16 +35,23 @@ void setup() {
 
 void draw() {
   // mjukhet för amplitude-data med utjämningsfaktor
-  sum += (rms.analyze() - sum) * smoothFactor;  
+  sum += (rms.analyze() - sum) * smoothFactor;
   
+  println(sum); 
+ 
   // rms.analyze () returnera ett värde mellan 0 och 1. Det är
   // skalad till höjd / 2 och multipliceras sedan med en skalfaktor
-  float rmsScaled = sum * (height/2) * scale;
-  fill(mouseY/2, random(255), random(255), mouseX);
-  
+  float rmsScaled = map(sum, 0, 1, 0, width); 
+  println(rmsScaled); 
+  fill(random(255), random(255), random(255), rmsScaled/2);
+  /*
   for ( int i = halfsize; i < width; i=i+cellsize*2) {
     for ( int j = halfsize; j < height-cellsize; j=j+cellsize*2) {
       ellipse(i+halfsize, j+halfsize, rmsScaled, rmsScaled);
     }
   }
+  */
+  move++; 
+  
+  ellipse(width/2, move%height, rmsScaled+move%200, rmsScaled/2);
 }

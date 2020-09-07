@@ -12,11 +12,10 @@ int x=0;
 color[] colorsList = new color[video_width];
 int lastMouseX = 0; 
 int lastMouseY = 0; 
-
 void setup() {
 
- // fullScreen();
-  size(800,800);
+  fullScreen();
+  // size(800,800);
   strokeWeight(3);
 
   for (int i = 0; i < video_width; i++) {
@@ -29,10 +28,25 @@ void setup() {
 
 void draw() {
   if (myVideo.available()) {
-     image(myVideo, 0, 0);
+    myVideo.read();
+    myVideo.loadPixels();
+    x++;
+    if(x == 3) {
+    x=0; 
   }
-   
-  float speed = map(mouseX, 0, width,-4, 4);
-  println(speed); 
-  myVideo.speed(speed);
+    for (int i = 0; i < video_width-1; i++) {
+      colorsList[i] = myVideo.pixels[i * video_slice_x];
+    }
+    for (int j = 0; j < video_width; j++) {
+      stroke(colorsList[j]); 
+      line(lastMouseX+x, lastMouseY+j-video_slice_x, mouseX+x, mouseY+j-video_slice_x);
+      
+  }
+    if (x > height) {
+      x = 0;
+    }
+    myVideo.updatePixels();
+    lastMouseY = mouseY; 
+    lastMouseX = mouseX;
+  }
 }
