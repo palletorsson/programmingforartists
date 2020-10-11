@@ -1,5 +1,5 @@
-<div class="gallery"></div>
-<div class="footer"></div>
+<h1 class="gallery"></h1>
+<h1 class="footer"></h1>
 <script>
     var gallery = document.querySelector(".gallery");
     gallery.innerHTML = "";
@@ -27,46 +27,45 @@
     form.append(input)
     footer.append(form) 
     setInterval(function(){  
-    combinestring = input.value; 
-    // gallery.innerHTML = combinestring; 
-    morse = convert(combinestring)
-    gallery.innerHTML = morse; 
-    console.log(combinestring) 
-    input.setAttribute("value", ""); 
-    moSound(morse)
+        combinestring = input.value; 
+        // gallery.innerHTML = combinestring; 
+        morse = convert(combinestring)
+        gallery.innerHTML = morse; 
+        console.log(combinestring) 
+        input.setAttribute("value", ""); 
+        moSound(morse)
     }, 5000);
     
     function convert(words){
-    
-    var newText = "";
-    for (var i = 0; i < words.length; i++) {
-        for (var j = 0; j < 37; j++) {
-            if (words[i].toLowerCase() == letters[j]) {
-                newText += morseLetters[j];
-                newText += "\xa0\xa0\xa0";
-                break;
-            }        
+        var newText = "";
+        for (var i = 0; i < words.length; i++) {
+            for (var j = 0; j < 37; j++) {
+                if (words[i].toLowerCase() == letters[j]) {
+                    newText += morseLetters[j];
+                    newText += "\xa0\xa0\xa0";
+                    break;
+                }        
+            }
         }
+        return newText;
     }
-    return newText;
-    }
+
     function moSound(morse) {
-    var i = 0;
-    var playing = setInterval(function(){  
-        if (morse[i] == ".") {
-            short.play();
-        }
-        if (morse[i] == "_") {
-    
-            long.play();
-    
-        }
-        i++;
-        if (i > morse.length)  {
-            clearInterval(playing); 
-        }
-    }, 100);
-    
+        var i = 0;
+        var playing = setInterval(function(){  
+            if (morse[i] == ".") {
+                short.play();
+            }
+            if (morse[i] == "_") {
+        
+                long.play();
+        
+            }
+            i++;
+            if (i > morse.length)  {
+                clearInterval(playing); 
+            }
+        }, 200); 
     }
     
 </script>   
