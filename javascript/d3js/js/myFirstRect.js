@@ -1,7 +1,7 @@
 var mySvg = d3.select("body")
     .append("svg")
 
-setInterval(function() {
+var showElements = function() {
   var myData = [];
   var showAnim = 0;
   var r = 0;
@@ -25,10 +25,9 @@ setInterval(function() {
   mySvg.attr("height", "1000px")
   .attr("width", "100%")
   .selectAll("rect")
-    .remove()
     .data(myData)
     .enter().append("rect")
-    .attr("opacity", "0.5")
+   
     .attr("fill", "pink")
     .attr("stroke", "black")
     .attr("height", function(d, i) { return d+"px"; })
@@ -44,5 +43,33 @@ setInterval(function() {
       console.log(they, vects[i].j*100, diff)
       return they+"px";
     })
-
-}, 1000);
+    .on("mouseover", function (d, i) {
+      d3.select(this)
+          .transition()
+           .duration('50')
+           .attr('width', function() {
+            return 10+"px"; 
+          })
+          .attr('height', function() {
+            return 10+"px"; 
+          })
+    })
+    .on('mouseout', function (d, i) {
+      d3.select(this)
+           .transition()
+           .duration('1000')
+           .attr('width', function() {
+            return 100+"px"; 
+          })
+          .attr('height', function() {
+            return 100+"px"; 
+          })
+          })
+    .on('click', function (d, i) {
+      d3.select(this)
+      .transition()
+      .duration('100')
+      .attr('opacity', "0.1")
+     }) 
+};
+showElements(); 

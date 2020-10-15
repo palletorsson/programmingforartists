@@ -20,7 +20,7 @@
     var long = new Audio('long.wav');
     var short = new Audio('short.wav');
     var morse = ""; 
-    
+     
     var letters = [ ' ', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0' ];
     var morseLetters = [ "\xa0\xa0\xa0\xa0", ". _", "_ . . .", "_ . _ .", "_ . .", ".", ". . _ .", "_ _ .", ". . . .", ". .", ". _ _ _", "_ . _", ". _ . .",  "_ _", "_ .", "_ _ _", ". _ _ .", "_ _ . _", ". _ .", ". . .", "_", ". . _", ". . . _", ". _ _", "_ . . _", "_ . _ _", "_ _ . .", ". _ _ _ _", ". . _ _ _", ". . . _ _", ". . . . _", ". . . . .", "_ . . . .", "_ _ . . .", "_ _ _ . .", "_ _ _ _ .", "_ _ _ _ _" ];
     
@@ -33,7 +33,7 @@
         gallery.innerHTML = morse; 
         console.log(combinestring) 
         input.setAttribute("value", ""); 
-        moSound(morse)
+        //moSound(morse)
     }, 5000);
     
     function convert(words){
@@ -68,4 +68,35 @@
         }, 200); 
     }
     
+
+    var animal = {
+        firstName: "Pigo",
+        age: 2,
+        eyeColor: "red",
+        sound: function() {
+            short.play();
+        },
+        myname: function() {
+            console.log(this.firstName); 
+        } 
+        };
+
+    document.onclick = function() {
+        animal.sound();
+        animal.myname(); 
+
+    } 
+    var startn = 0;
+
+    setInterval(function(){ 
+        addRandom();
+        }, 10);
+  
+        var addRandom = function() {
+            var r = Math.random(1, 10); 
+            startn = startn + r; 
+            console.log(startn); 
+            footer.innerHTML = startn;
+        }
+
 </script>   

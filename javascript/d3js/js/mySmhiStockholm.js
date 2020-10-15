@@ -18,7 +18,20 @@ d3.json(call).then(function(d) {
       .attr("width", "30px")
       .attr("fill", "pink")
       .attr("stroke", "black")
-      .attr("x", function(d, i) { return (i * 30)+100; })
+      .attr("x", function(d, i) { return (i * 40)+100; })
       .attr("y", function(d) { return 400 - d.value * 10 ; });
+
+ var text = mySvgContainer.selectAll("text")
+      .data(d.value)
+      .enter()
+      .append("text");
+
+  var textLabels = text
+    .attr("x", function(d, i) { return (i * 40)+100; })
+    .attr("y", function(d) { return 300 - d.value * 10 ; })
+    .text( function (d) {  return  d.value ; })
+      .attr("font-family", "sans-serif")
+      .attr("font-size", "20px")
+      .attr("fill", "red");
 
 }); // json import

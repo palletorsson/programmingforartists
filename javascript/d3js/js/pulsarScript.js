@@ -1,6 +1,6 @@
-var height = 450
+var height = 800
   , width = height / 1.138
-  , top_margin =  width / 13
+  , top_margin = ~~( width / 13 )
   , amplitude = width / 350
   ;
 
@@ -10,15 +10,14 @@ var svg = d3.select( 'body' ).append( 'svg' )
   .append( 'g' )
     .attr( 'transform', `translate(${960/2-width/2},${10})` );
 
-function play() {
 d3.text('./data/pulsar.csv', function ( raw ) {
 
-     d3.csv.parseRows( raw, r => r.map( Number ) ),
+  var data = d3.csv.parseRows( raw, r => r.map( Number ) ),
       x = d3.scale.linear()
             .domain([ 0, data[0].length - 1 ])
             .range([ 0, width ]),
       y = d3.scale.linear()
-            .domain([ 0, data.length - 1 ])
+            .domain([ 0, data.length -1 ])
             .range([ top_margin, height ]);
 
   var line = d3.svg.line()
@@ -55,22 +54,12 @@ d3.text('./data/pulsar.csv', function ( raw ) {
   var ax = d3.scale.linear().domain([ 0, 92 ])
     .range([ 0, width ]);
 
-  axis.append( 'line' )
-    .attr( 'x2', width );
-
   axis.selectAll( '.tick' )
-    .data( d3.range( 5, 92, 20 ) ).enter()
+    .data( d3.range( 5, 300, 20 ) ).enter()
     .append( 'line' )
       .attr( 'x1', ax )
       .attr( 'x2', ax )
       .attr( 'y1', -5 );
-
-  axis.append( 'path' )
-    .attr( 'd', `M0,0 L0,9.5
-                 M0,5 L${ax(5)},5
-                 M${ax(20)},0 L${ax(20)},9.5
-                 M${ax(15)},5 L${ax(20)},5` )
-    .attr( 'transform', `translate(${ax(45)},5)` );
 
   axis.append( 'text' )
     .text( '20 ms' )
@@ -79,5 +68,3 @@ d3.text('./data/pulsar.csv', function ( raw ) {
     .attr( 'dy', '.92em' );
 
 });
-}
-play(); 

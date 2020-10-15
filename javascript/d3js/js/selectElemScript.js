@@ -1,11 +1,9 @@
-var showAnim = 2; 
 
-if (showAnim == 1) {
   d3.selectAll("p")
     .data([8, 16, 32, 16, 8, 56])
     .text(function(d) { return d; })
     .style("font-size", function(d) { return d*2 + "px"; });
-}
+
 
 if (showAnim == 2) {
   d3.selectAll("p")
