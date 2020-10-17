@@ -6,7 +6,7 @@ SoundFile sample;
 Amplitude rms;
 
 // Definiera en scale factor 
-float scale = 5.0;
+float scale = 1.0;
 
 // Definiera en mjukhethetfaktor Declare
 float smoothFactor = 0.25;

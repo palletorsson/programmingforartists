@@ -41,12 +41,13 @@ d3.json('./data/arctic-sea-ice-extent-6.json').then(function(d) {
   console.log("extentSeptember: ", extentSeptember); 
   console.log("Dates: ",  dates);
 
+
   // ta fram max tempraturen
   var tMax = d3.max(extentSeptember);
   console.log("max temp", tMax); 
 
   // skalor hjälper oss att mapp värden i grafens storlek
-  // skala vertikalt i höjdled, mängden is
+  // skala vertikalt i höjdled, mängden is genom höjden
   yScale = d3.scaleLinear()
     .domain([0, tMax]) // våra värden från 0 till tMax
     .range([0, height]); // skalan som den skall passa in i 
@@ -60,7 +61,7 @@ d3.json('./data/arctic-sea-ice-extent-6.json').then(function(d) {
   yAxisTicks = d3.axisLeft(yAxisValues)
     .ticks(10)
  
- // skala från horizontalt i sidled, årtal
+ // skala från horizontalt i sidled, genom att mappa årtal och vidden
   xScale = d3.scaleBand()
     .domain(extentSeptember)
     .paddingInner(.1)
@@ -72,14 +73,14 @@ d3.json('./data/arctic-sea-ice-extent-6.json').then(function(d) {
   var enddate = dates[(dates.length-1)]; 
   console.log("startdate - enddate: " + startdate, enddate);
 
+  // skapa scala genom att mappa data mot vidden 
   xAxisValues = d3.scaleTime()
     .domain([startdate, enddate])
-    .range([0, width])
-
-    xAxisValues.tickFormat(d3.format('0f'));
-
-    xAxisTicks = d3.axisBottom(xAxisValues)
-    .ticks(20)
+    .range([0, width]); 
+ 
+  // ge skalan till axisBottom, längst ner skriv ut skalan med genom call()
+  xAxisTicks = d3.axisBottom(xAxisValues)
+    .ticks(20);
 
   // färgskala på staplarna
   colors = d3.scaleLinear()
@@ -126,7 +127,7 @@ d3.json('./data/arctic-sea-ice-extent-6.json').then(function(d) {
         // spara den aktuella fill färgen 
         tempColor = this.style.fill;
         d3.select(this)
-          .style('fill', 'lightgray')
+          .style('fill', 'brown')
       })
       .on('mouseout', function(d) {
         tooltip.html('')
@@ -144,8 +145,8 @@ d3.json('./data/arctic-sea-ice-extent-6.json').then(function(d) {
   // ticks under
   xGuide = d3.select('#viz svg').append('g')
             .attr('transform', 'translate(20,'+ height + ')')
-            .call(xAxisTicks)
-
+            .call(xAxisTicks); 
+            
   // animationen 
   myChart.transition()
     .attr('height', function(d) {

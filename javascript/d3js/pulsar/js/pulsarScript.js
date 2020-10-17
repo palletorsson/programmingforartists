@@ -51,7 +51,8 @@ d3.text('./data/pulsar.csv', function ( raw ) {
     .attr( 'transform', `translate(0,${height+15})` );
 
   // the pulse-width is cropped to 92ms
-  var ax = d3.scale.linear().domain([ 0, 92 ])
+  var ax = d3.scale.linear()
+    .domain([ 0, 92 ])
     .range([ 0, width ]);
 
   axis.selectAll( '.tick' )
@@ -67,4 +68,30 @@ d3.text('./data/pulsar.csv', function ( raw ) {
     .attr( 'y', 3 )
     .attr( 'dy', '.92em' );
 
+var updatedata = function() {
+console.log(".");
+  for (var i = 0; i < data.length; i++) {
+    for (var j = 0; j < data[i].length; j++) {
+
+      data[i][j] = data[i][j] + (Math.random() *4) -2; 
+
+      
+    }
+    
+  }
+
+  svg.append( 'g' )
+    .selectAll( '.wave' )
+    .remove() // remove all wave
+    .data( data ).enter()
+      .append( 'path' )
+     
+        .attr( 'transform', (d,i) => `translate(0,${y(i)})` )
+        .attr( 'class', 'wave' )
+        .attr( 'd', line )
+        ;
+}
+    setInterval(function(){ 
+      updatedata(); 
+      }, 20);
 });

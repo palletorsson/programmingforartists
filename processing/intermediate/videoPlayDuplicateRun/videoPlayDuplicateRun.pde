@@ -27,7 +27,7 @@ void draw() {
       j = 0;
     }
   }
-   image(movie, i*320, j*240);
+   image(movie, i*mouseX, j*mouseY);
 }
 
 void movieEvent(Movie movie) {  
