@@ -147,7 +147,7 @@ d3.json('./data/arctic-sea-ice-extent-6.json').then(function(d) {
             .attr('transform', 'translate(20,'+ height + ')')
             .call(xAxisTicks); 
             
-  // animationen 
+  // animationen stapelhöjd
   myChart.transition()
     .attr('height', function(d) {
       console.log("y scale:", yScale(d), d); 
