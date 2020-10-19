@@ -85,7 +85,7 @@ var addCubesToScene = function () {
 var setCubesPostion = function () {
   for (var i = 0; i < count; i++) {
         for (var j = 0; j < count; j++) {
-            cubelist[i][j].position.setX((i-5)*2); 
+            cubelist[i][j].position.setX((i-5)* ); 
             cubelist[i][j].position.setZ((j-5)*2);  
         }
     }

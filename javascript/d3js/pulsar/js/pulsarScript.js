@@ -92,6 +92,6 @@ console.log(".");
         ;
 }
     setInterval(function(){ 
-      updatedata(); 
+     // updatedata(); 
       }, 20);
 });

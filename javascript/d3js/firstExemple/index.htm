@@ -5,35 +5,37 @@
       <title> First d3 Exempel </title>
       <script src="./lib/d3.js"></script>
    </head>
-   <body>   
-      <script>
-         var mySvgContainer = d3.select("body").append("svg");
-         mySvgContainer.attr("height", "1000px")
-            .attr("width", "100%");
+   <body>
+      
+<script>
+   var mySvgContainer = d3.select("body").append("svg");
+   mySvgContainer.attr("height", "1000px")
+      .attr("width", "100%");
 
-         var data = [1, 3, 5];
-            mySvgContainer.selectAll("rect")
-               .data(data)
-               .enter().append("rect")
-               .attr("height", "200px")
-               .attr("width", "200px")
-               .attr("fill", "pink")
-               .attr("stroke", "black")
-               .attr("x", function(d) { return d * 100; })
-               .attr("y", function(d) { return d * 100; });
 
-         var text = mySvgContainer.selectAll("text")
-            .data(data)
-            .enter()
-            .append("text");
+   var data = [1, 3, 5];
+      mySvgContainer.selectAll("rect")
+         .data(data)
+         .enter().append("rect")
+         .attr("height", "200px")
+         .attr("width", "200px")
+         .attr("fill", "pink")
+         .attr("stroke", "black")
+         .attr("x", function(d) { return d * 100; })
+         .attr("y", function(d) { return d * 100; });
 
-         var textLabels = text
-            .attr("x", function(d) { return d * 100; })
-            .attr("y", function(d) { return d * 100; })
-            .text( function (d) { return "( " + d + ", " + d +" )"; })
-            .attr("font-family", "sans-serif")
-            .attr("font-size", "20px")
-            .attr("fill", "red");
+   var text = mySvgContainer.selectAll("text")
+       .data(data)
+       .enter()
+       .append("text");
+
+   var textLabels = text
+       .attr("x", function(d) { return d * 100; })
+       .attr("y", function(d) { return d * 100; })
+       .text( function (d) { return "( " + d + ", " + d +" )"; })
+       .attr("font-family", "sans-serif")
+       .attr("font-size", "20px")
+       .attr("fill", "red");
       </script>
    </body>
 </html>
