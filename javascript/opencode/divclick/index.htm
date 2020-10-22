@@ -1,0 +1,122 @@
+<html lang="en">
+    <head>
+
+        <!-- alt 2 -->      
+        <style> 
+            .myInteral {
+                color: rgb(0, 17, 255); 
+            }
+            .targetText {
+                font-size: 24px;
+                text-align: center;
+                padding: 10px;
+                margin: 10px;  
+            }
+
+            .myTargetDiv {
+                width: 300px; 
+            }
+
+            .targetTextInner {
+                padding-top:50%;    
+            }
+            .cards {
+    
+                float: left;
+            }
+
+        </style>
+
+        <!-- alt 2 --> 
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+    
+    </head>
+
+    <body>
+        <div id="myTargetDiv" class="myTargetDiv">
+            
+        </div>
+
+
+        <!-- alt 1 -->
+        <script>
+            var tempImg = "myImage_2.jpg"; 
+            var myObject = [
+                {
+                    img: "myImage_1.jpg",
+                    name: "my Image 1", 
+                    list: ["instruct 1", "instruct 2","instruct 3"]
+
+
+                }, 
+                {
+                    img: "myImage_2.jpg",
+                    name: "my Image 2", 
+                    list: ["instruct 1", "instruct 2","instruct 3"]
+                },
+            ]; 
+
+            var myTargetDiv = document.getElementById("myTargetDiv");
+            console.log(myObject); 
+
+        var currentObject = 0; 
+        for (var i = 0; i < myObject.length; i++) {
+            var oImg = document.createElement("img");
+                oImg.setAttribute('src', 'img/'+myObject[i].img);
+                oImg.setAttribute('alt', 'my image');
+                oImg.setAttribute('id', "img_"+i);
+                oImg.setAttribute('width', "300px");
+                oImg.setAttribute('class', "cards");
+              
+                myTargetDiv.appendChild(oImg);
+            var oText = document.createElement("div");
+                oText.innerHTML = myObject[i].name; 
+                oText.setAttribute('id', "text_"+i);
+                myTargetDiv.appendChild(oText);
+        }
+            var allImg = document.querySelectorAll(".cards"); 
+     
+
+            for (var i = 0; i < allImg.length; i++) {
+                    allImg[i].addEventListener('click', function(event) {
+                        console.log(this.id);
+                        var tempid = this.id; 
+                        tempid = tempid.split("_");
+                        tempid = tempid[1];        
+                        var tempTextTarget = document.getElementById("text_"+tempid); 
+                        console.log(tempTextTarget); 
+                        var rand = Math.floor(Math.random()* myObject[tempid].list.length); 
+                        console.log(rand); 
+                        tempTextTarget.innerHTML = myObject[tempid].list[rand]; 
+                        console.log(myObject[tempid].list)
+                    });
+                } 
+
+            allImg.onclick = function() { 
+                console.log(this.id);
+                console.log(myObject[this.id].list)
+            
+                console.log("image element clicked ", )
+                if(firstElementShow == "image") {
+                    myTargetDiv.innerHTML = text_1.innerHTML; 
+                    firstElementShow = "text"; 
+                } else {
+                    myTargetDiv.innerHTML = myImage_1.innerHTML; 
+                    firstElementShow = "image"; 
+                }
+          
+            }
+           
+        </script>
+
+        <!-- alt 2 -->
+        <script src="js/myScript.js">
+        </script>
+
+        <!-- mappstuktur -->
+        <!-- index.htm -->
+        <!-- /js/ -->
+        <!-- /js/myScript.js -->
+        
+    </body>
+</html>

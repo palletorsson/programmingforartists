@@ -1,0 +1,99 @@
+<html lang="en">
+    <head>
+
+        <!-- alt 2 -->      
+        <style> 
+            .myInteral {
+                color: rgb(0, 17, 255); 
+            }
+            .targetText {
+                font-size: 24px;
+                text-align: center;
+                padding: 10px;
+                margin: 10px;  
+            }
+
+            .myTargetDiv {
+                width: 300px; 
+            }
+
+            .targetTextInner {
+                padding-top:50%;    
+            }
+
+        </style>
+
+        <!-- alt 2 --> 
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+    
+    </head>
+
+    <body>
+
+        <div class="myExternal"> style from external file </h1>
+
+        <h2 class="myInteral"> style from this file </h2>
+        <div id="myTargetDiv" class="myTargetDiv">
+            
+        </div>
+
+        <div id="hiddenDiv"> 
+            <!-- info image 1 -->
+            <div id="myTargetText_1" >
+                <div class="targetText"> 
+                    <div class="targetTextInner"> My target Text 1 </div>
+             </div>
+            </div>
+            <div id="myImageId_1">
+                 <img src="img/myImage_1.jpg" alt="my image" />
+            </div> 
+            
+        </div>
+
+        <!-- alt 1 -->
+        <script>
+            // göm bild-div
+            var myHiddenDiv = document.getElementById("hiddenDiv"); 
+            myHiddenDiv.style.display = 'none';
+
+            // välja element 
+            console.log("Hello from html"); 
+            var text_1 = document.getElementById("myTargetText_1");
+            var myImage_1 = document.getElementById("myImageId_1");
+            var firstElementShow = "image"; 
+
+            var text_2 = document.getElementById("myTargetText_2");
+            var myImage_2 = document.getElementById("myImageId_2");
+            var myTargetDiv = document.getElementById("myTargetDiv");
+        
+            myTargetDiv.innerHTML = myImage_1.innerHTML; 
+            
+            myTargetDiv.onclick = function() { 
+                console.log("image element clicked ", )
+                if(firstElementShow == "image") {
+                    myTargetDiv.innerHTML = text_1.innerHTML; 
+                    firstElementShow = "text"; 
+                } else {
+                    myTargetDiv.innerHTML = myImage_1.innerHTML; 
+                    firstElementShow = "image"; 
+                }
+          
+            }
+            myImage_1.onclick = function() {
+                console.log("image clicked")
+                var myTargetDiv = document.getElementById("myTargetDiv");
+                myTargetDiv.innerHTML = "my new text"
+            }
+        </script>
+
+        <!-- alt 2 -->
+        <script src="js/myScript.js">
+        </script>
+
+        <!-- mappstuktur -->
+        <!-- index.htm -->
+        <!-- /js/ -->
+        <!-- /js/myScript.js -->
+        
+    </body>
+</html>
