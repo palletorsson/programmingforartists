@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>jQuery Modal </title>
+  <style>
+    .modal {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 50%;
+        height: 50%;
+        background-color: antiquewhite;
+        padding: 20px;
+    }
+    .closer {
+        position: absolute;
+        
+        /* don't need to go crazy with z-index here, just sits over .modal-guts */
+        z-index: 1;
+        
+        top: 10px;
+        
+        /* needs to look OK with or without scrollbar */
+        right: 20px;
+        
+        border: 0;
+        background-color: darkgray;
+        color: white;
+        padding: 5px 10px;
+        font-size: 1.3rem;
+    }
+
+  </style>
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+
+  <script>
+  $( function() {
+    
+
+    // 1. when entering page hide element
+    $( ".modal" ).hide();
+ 
+    // 2. 
+    $( ".opener" ).on( "click", function() {
+      $( ".modal" ).hide();
+      var id = this.id.split("_");
+    
+      $( "#dialog_"+id[1] ).show( "open" ); // toggle
+      
+    });
+
+    $( ".closer" ).on( "click", function() {
+        $(this).parents('div').fadeOut();
+    });
+  } );
+  </script>
+</head>
+<body>
+ 
+
+<button id="o_1" class="opener" >Open 1</button>
+<button id="o_2" class="opener" >Open 2</button>
+
+<div id="dialog_1" class="modal" title="Basic dialog"> 
+    <button  class="closer" > x </button>
+    <p>
+        dialog 1
+    
+    </p>
+  </div>
+  <div id="dialog_2" class="modal" title="Basic dialog"> 
+    <button  class="closer" > x </button>
+    <p>
+       dialog 2
+    
+    </p>
+  </div>
+ 
+</body>
+</html>

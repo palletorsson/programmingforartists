@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Modal</title>
+  <style>
+      .container {
+          margin: 10px;
+          padding: 12px;
+      }
+      .opener {
+          padding: 12px;
+          margin: 4px;
+          border: 1px black dotted;
+      }
+      .modal {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 50%;
+        height: 50%;
+        background-color: antiquewhite;
+        padding: 20px;
+    }
+ 
+  </style>
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $(".modal").hide(); 
+    $(".opener").click(
+        function() {
+            $(".modal").hide(); 
+           var target = this.id.split("_")
+           var target_id = target[1]; 
+           target_id = "#modal_"+target_id
+           console.log(target_id); 
+           $(target_id).show("open"); 
+        }
+    )
+    $(".close").click(
+        function(){
+            console.log(this.id); 
+            $(this).parent("div").hide("explode"); 
+        }
+    ); 
+  } );
+
+  </script>
+</head>
+<body>
+    
+<div class="container">
+   
+    
+  <span id="open_1" class="opener"> open 1 </span>
+  <span id="open_2" class="opener"> open 2 </span>
+  <span id="open_3" class="opener"> open 3 </span>
+
+  <div class="modal" id="modal_1">
+      <button id="close_1" class="close">x</button>
+    model 1
+  </div>
+  <div class="modal" id="modal_2">
+    <button id="close_2" class="close">x</button>
+    model 2
+</div>
+<div class="modal" id="modal_3">
+    <button id="close_3" class="close">x</button>
+    model 3
+</div>
+</div>
+</body>
+</html>

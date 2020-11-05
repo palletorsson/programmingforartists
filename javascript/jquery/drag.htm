@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>jQuery UI Draggable - Default functionality</title>
+  <style>
+  .draggable { 
+        width: 150px; 
+        height: 150px; 
+        padding: 0.5em; 
+        position: fixed;
+        }
+  </style>
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  $( function() {
+
+
+    var reset = function() {
+      var start_x = 100; 
+      var start_y = 100; 
+      var x = start_x; 
+      var y = start_y; 
+      $.each($(".container").find("*"), function(i, item){
+        $(item).css({ 
+          top: y, 
+          left: x 
+        });
+        // x = x + Math.random() * 5  00; 
+        // y = y + Math.random() * 500; 
+        x = x + 40; 
+        y = y + 10; 
+    }); 
+    }
+    $( ".draggable" ).draggable();
+    reset(); 
+   
+
+
+
+$( "#reset" ).click(function() {
+  reset();
+});
+  } );
+
+  </script>
+</head>
+<body>
+  <button id="reset">
+    reset me
+  </button>
+  <div class="container">
+<div id="draggable0" class="ui-widget-content draggable">
+  <p>Drag me around</p>
+</div>
+<div id="draggable1" class="ui-widget-content draggable">
+    <p>Drag me around</p>
+  </div>
+  <div id="draggable2" class="ui-widget-content draggable">
+    <p>Drag me around</p>
+  </div>
+  <div id="draggable3" class="ui-widget-content draggable">
+    <p>Drag me around</p>
+  </div>
+  <div id="draggable3" class="ui-widget-content draggable">
+    <p>Drag me around</p>
+  </div>  <div id="draggable3" class="ui-widget-content draggable">
+    <p>Drag me around</p>
+  </div>  <div id="draggable3" class="ui-widget-content draggable">
+    <p>Drag me around</p>
+  </div>  <div id="draggable3" class="ui-widget-content draggable">
+    <p>Drag me around</p>
+  </div>
+</div>
+</body>
+</html>
