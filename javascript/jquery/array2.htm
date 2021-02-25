@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Array</title>
+  <style>
+
+  </style>
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  $( function() {
+   var myString = "I have a dream"; 
+   console.log(myString); 
+   var arr = myString.split(" "); 
+   console.log(arr); 
+   var last = arr.pop(); 
+   console.log(arr); 
+   console.log(last); 
+   arr.push("dream"); 
+   console.log(arr); 
+   arr.shift(); 
+   console.log(arr); 
+   arr.unshift("I"); 
+   console.log(arr); 
+   arr.splice(1,1, "still", "have"); 
+   console.log(arr); 
+   var con = ["that", "one", "day", "still"]
+   var newarr = arr.concat(con); 
+   console.log(newarr);
+   var finalString = newarr.join(" "); 
+   console.log(finalString);
+  // var index = newarr.indexOf("still"); 
+  // console.log(index); 
+  // console.log(arr);
+  // newarr.splice(1,1)
+   console.log(newarr);
+  //  find, filter
+  var withoutstill = [];
+
+  let result = newarr.filter(function(item, index, array) {
+     
+    console.log(item); 
+    if(item == "still") {
+        console.log("removed"); 
+    } else {
+       withoutstill.push(item)
+    }
+    return withoutstill; 
+
+    });
+    console.log(withoutstill); 
+
+});
+
+// https://javascript.info/array-methods
+
+  </script>
+</head>
+<body>
+
+</body>
+</html>

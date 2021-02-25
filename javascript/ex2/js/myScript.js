@@ -3,14 +3,16 @@ var CSS_COLORS = ["AliceBlue","AntiqueWhite","Aqua","Aquamarine","Azure","Beige"
 var rand = 0; 
 var body = $("body");
 var el = $(".target");
-
+var oldcolor; 
 setInterval(function(){  
+	el.css({backgroundColor: oldcolor});
     rand = Math.floor(Math.random() * ANIMALS.length);
     var theAnimal = ANIMALS[rand];        
     rand = Math.floor(Math.random() * CSS_COLORS.length);
-    var theColor = CSS_COLORS[rand];           
+    var theColor = CSS_COLORS[rand];  
+	oldcolor = theColor
     body.css({backgroundColor: theColor});
-    el.css({backgroundColor: theColor});
+    
     el.hide(); 
     el.text(theColor + " "+ theAnimal).fadeIn(500); 
 }, 3000);

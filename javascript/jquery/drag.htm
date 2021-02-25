@@ -16,8 +16,6 @@
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script>
   $( function() {
-
-
     var reset = function() {
       var start_x = 100; 
       var start_y = 100; 
@@ -40,9 +38,9 @@
 
 
 
-$( "#reset" ).click(function() {
-  reset();
-});
+  $( "#reset" ).click(function() {
+    reset();
+  });
   } );
 
   </script>
@@ -52,10 +50,10 @@ $( "#reset" ).click(function() {
     reset me
   </button>
   <div class="container">
-<div id="draggable0" class="ui-widget-content draggable">
-  <p>Drag me around</p>
-</div>
-<div id="draggable1" class="ui-widget-content draggable">
+  <div id="draggable0" class="ui-widget-content draggable">
+    <p>Drag me around</p>
+  </div>
+  <div id="draggable1" class="ui-widget-content draggable">
     <p>Drag me around</p>
   </div>
   <div id="draggable2" class="ui-widget-content draggable">
